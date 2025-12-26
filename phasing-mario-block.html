@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phasing Mario Block - Hanif Hashim</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h1 class="site-name"><a href="index.html">Hanif Hashim</a></h1>
+                <p class="site-tagline">Interactive media artist and creative technologist.</p>
+
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Featured</a>
+                    
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+
+            <footer class="sidebar-footer">
+                <p>&copy; 2025 Abdul Hanif Hashim</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <article class="project-detail">
+                <header class="project-header">
+                    <h1>Phasing Mario Block</h1>
+                    <p class="project-meta">3D animation exploring phasing, rhythm, and repetition</p>
+                    <div class="project-tags">
+                        <span class="tag">3D Animation</span>
+                        <span class="tag">Blender</span>
+                        <span class="tag">Experimental</span>
+                    </div>
+                </header>
+
+                <div class="project-content">
+                    <div class="video-container">
+                        <video width="100%" controls autoplay loop muted>
+                            <source src="images/phasing-mario-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <section class="project-description">
+                        <h2>About This Project</h2>
+                        <p>Phasing Question Blocks is a visual exploration of Steve Reich's pioneering phasing technique translated into 3D animation. Two identical Mario question blocks rotate at slightly different speeds, creating evolving visual patterns that mirror Reich's aural phasing compositions. The blocks gradually fall out of sync, creating subtle rhythmic variations before realigning at the loop's end—a visual ouroboros of endless transformation.</p>
+
+                        <h3>Concept & Inspiration</h3>
+                        <p>The inspiration came from composer Steve Reich's pioneering use of phasing in audio, where two identical loops gradually fall out of sync to create complex, shifting patterns. This piece translates that sonic technique into 3D graphics, exploring how the affordances of visual media—rotation, spatial relationships, and form—parallel Reich's exploration of pitch and rhythm in sound.</p>
+
+                        <p>The work also engages with the broader context of phasing in video art, where the technique has been used for political commentary through uncanny patterns in speech and movement. Here, the familiar Mario question block becomes the subject, its endless rotation reflecting the ouroboros symbol—stability and change in perpetual cycle.</p>
+
+                        <h3>Visual Pattern & Structure</h3>
+                        <p>The two blocks rotate with different degrees of rotation over 1800 frames. A subtle visual pattern emerges as the blocks phase through different states of alignment, creating new composite shapes and forms. The pattern only fully realigns at the loop's end—the viewer identifies the halfway point by observing the regression in the pattern, revealing the loop's structure through the phasing relationship itself.</p>
+
+                        <div class="case-study-image">
+                            <img src="images/phasing-timeline-graph.png" alt="Phasing animation timeline with phase difference graph">
+                            <p class="image-caption">Animation timeline showing key rotation states and phase difference curve</p>
+                        </div>
+
+                        <div class="case-study-image">
+                            <img src="images/phasing-circular-diagram.png" alt="Circular timeline showing rotation phases">
+                            <p class="image-caption">Circular representation of rotation phases throughout the 1800-frame loop</p>
+                        </div>
+
+                        <h3>Technical Implementation</h3>
+                        <p>Created in Blender using manual keyframe animation. After exploring Python scripting and driver-based automation, the final workflow involved calculating rotation values in Excel across four columns (frame number, object A rotation, object B rotation, delta) and manually inserting 1800 frames of keyframe data. While labor-intensive, this approach provided precise control over the phasing relationship.</p>
+
+                        <h3>Technologies</h3>
+                        <ul>
+                            <li>Blender 3D (animation and rendering)</li>
+                            <li>HDRI lighting for photorealistic illumination</li>
+                            <li>Excel for rotation value calculation</li>
+                            <li>Keyframe animation over 1800 frames</li>
+                        </ul>
+
+                        <h3>Context</h3>
+                        <p>Created for CART361 - Interactive Media II (Ouroboros assignment) at Concordia University, Fall 2024.</p>
+                    </section>
+                </div>
+
+                <a href="index.html" class="back-link">← Back to Featured</a>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
