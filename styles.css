@@ -123,11 +123,12 @@ img {
     flex: 1;
     padding: 3rem 4rem;
     max-width: 1400px;
+    background-color: var(--bg-secondary);
 }
 
 /* Projects Grid - Masonry Layout */
 .projects-grid {
-    column-count: 3;
+    column-count: 4;
     column-gap: 1.25rem;
 }
 
@@ -143,12 +144,13 @@ img {
     margin-bottom: 1.25rem;
     display: inline-block;
     width: 100%;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
 }
 
 .project-item:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transform: translateY(-4px);
-    border-color: #d0d0d0;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px) scale(1.02);
+    border-color: #c0c0c0;
 }
 
 .project-item:nth-child(1) { animation-delay: 0.1s; }
@@ -195,19 +197,25 @@ img {
 }
 
 /* Varied Rectangle Heights for Dynamic Masonry */
-.project-item:nth-child(1) .project-image { min-height: 400px; }
-.project-item:nth-child(2) .project-image { min-height: 350px; }
-.project-item:nth-child(3) .project-image { min-height: 450px; }
-.project-item:nth-child(4) .project-image { min-height: 300px; }
-.project-item:nth-child(5) .project-image { min-height: 380px; }
-.project-item:nth-child(6) .project-image { min-height: 320px; }
-.project-item:nth-child(7) .project-image { min-height: 420px; }
-.project-item:nth-child(8) .project-image { min-height: 360px; }
-.project-item:nth-child(9) .project-image { min-height: 340px; }
-.project-item:nth-child(10) .project-image { min-height: 390px; }
+.project-item:nth-child(1) .project-image { min-height: 300px; }
+.project-item:nth-child(2) .project-image { min-height: 260px; }
+.project-item:nth-child(3) .project-image { min-height: 340px; }
+.project-item:nth-child(4) .project-image { min-height: 225px; }
+.project-item:nth-child(5) .project-image { min-height: 285px; }
+.project-item:nth-child(6) .project-image { min-height: 240px; }
+.project-item:nth-child(7) .project-image { min-height: 315px; }
+.project-item:nth-child(8) .project-image { min-height: 270px; }
+.project-item:nth-child(9) .project-image { min-height: 255px; }
+.project-item:nth-child(10) .project-image { min-height: 290px; }
 
 .project-item:hover .project-image img {
     transform: scale(1.05);
+}
+
+/* Special handling for pre-scaled images */
+.project-item:hover .project-image img[style*="scale(2)"] {
+    transform: scale(2.1) !important;
+    transform-origin: center;
 }
 
 .project-info {
@@ -509,6 +517,12 @@ img {
     }
 }
 
+@media (max-width: 1024px) {
+    .projects-grid {
+        column-count: 3;
+    }
+}
+
 @media (max-width: 768px) {
     .sidebar-content {
         padding: 2rem 1.5rem;
@@ -524,16 +538,16 @@ img {
     }
 
     /* Scale down heights on tablet */
-    .project-item:nth-child(1) .project-image { min-height: 300px; }
-    .project-item:nth-child(2) .project-image { min-height: 260px; }
-    .project-item:nth-child(3) .project-image { min-height: 340px; }
-    .project-item:nth-child(4) .project-image { min-height: 240px; }
-    .project-item:nth-child(5) .project-image { min-height: 280px; }
-    .project-item:nth-child(6) .project-image { min-height: 250px; }
-    .project-item:nth-child(7) .project-image { min-height: 320px; }
-    .project-item:nth-child(8) .project-image { min-height: 270px; }
-    .project-item:nth-child(9) .project-image { min-height: 260px; }
-    .project-item:nth-child(10) .project-image { min-height: 290px; }
+    .project-item:nth-child(1) .project-image { min-height: 240px; }
+    .project-item:nth-child(2) .project-image { min-height: 210px; }
+    .project-item:nth-child(3) .project-image { min-height: 270px; }
+    .project-item:nth-child(4) .project-image { min-height: 190px; }
+    .project-item:nth-child(5) .project-image { min-height: 225px; }
+    .project-item:nth-child(6) .project-image { min-height: 200px; }
+    .project-item:nth-child(7) .project-image { min-height: 255px; }
+    .project-item:nth-child(8) .project-image { min-height: 215px; }
+    .project-item:nth-child(9) .project-image { min-height: 205px; }
+    .project-item:nth-child(10) .project-image { min-height: 235px; }
 
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -574,13 +588,13 @@ img {
 
     /* Uniform heights on mobile */
     .project-image {
-        min-height: 250px !important;
+        min-height: 200px !important;
     }
 
-    .project-item:nth-child(1) .project-image { min-height: 280px !important; }
-    .project-item:nth-child(3) .project-image { min-height: 300px !important; }
-    .project-item:nth-child(5) .project-image { min-height: 270px !important; }
-    .project-item:nth-child(7) .project-image { min-height: 290px !important; }
+    .project-item:nth-child(1) .project-image { min-height: 225px !important; }
+    .project-item:nth-child(3) .project-image { min-height: 240px !important; }
+    .project-item:nth-child(5) .project-image { min-height: 215px !important; }
+    .project-item:nth-child(7) .project-image { min-height: 230px !important; }
 }
 
 /* Case Study Layout */
