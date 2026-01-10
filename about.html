@@ -7,9 +7,11 @@
     <link rel="icon" type="image/png" href="favicon-frame-0.png">
     <script src="favicon-animation.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="page-wrapper">
@@ -19,8 +21,8 @@
                 <p class="site-tagline">Interactive media artist and creative technologist.</p>
                 
                 <nav class="main-nav">
-                    <a href="index.html" class="nav-link">Featured</a>
-                    
+                    <a href="index.html" class="nav-link">Work</a>
+
                     <a href="about.html" class="nav-link active">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
@@ -32,83 +34,210 @@
         </aside>
 
         <main class="main-content">
-            <article class="about-content">
-                <h2>About</h2>
-                <p>
-                    I'm Hanif Hashim, a creative technologist and interaction designer based in Montréal. 
-                    Currently studying Computation Arts at Concordia University, I explore the intersection of 
-                    technology, art, and human experience through interactive installations, generative systems, 
-                    and creative code.
-                </p>
-                <p>
-                    My work focuses on making invisible data visible, creating responsive environments that 
-                    react to human presence, and developing systems that bridge the physical and digital worlds. 
-                    I'm particularly interested in surveillance culture, machine learning as a creative tool, 
-                    and the ways technology can create meaningful, embodied experiences.
-                </p>
+            <article class="about-content character-sheet">
+                <!-- Character Sheet Container -->
+                <div class="character-sheet-container">
 
-                <h2>Technical Practice</h2>
-                <p>
-                    My practice combines creative coding, machine learning, and physical computing to create 
-                    interactive installations and media works. I work extensively with Max/MSP for real-time 
-                    audio-visual systems, Python for computer vision and machine learning applications, and 
-                    various sensors and hardware platforms for physical interaction.
-                </p>
+                    <!-- Character Portrait Section -->
+                    <div class="character-hero-section">
+                        <div class="character-ref-image single">
+                            <img src="images/ref8k.png" alt="Character Reference Sheet">
+                        </div>
+                    </div>
 
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Creative Coding</h3>
-                        <ul>
-                            <li>Max/MSP & Max for Live</li>
-                            <li>Python (MediaPipe, OpenCV)</li>
-                            <li>PICO-8</li>
-                            <li>Processing / p5.js</li>
-                        </ul>
+                    <!-- Bottom Section: Stats & Info -->
+                    <div class="character-info-section">
+                        <div class="info-column">
+                            <div class="info-box">
+                                <h3>CHARACTER BIO</h3>
+                                <p>I'm Hanif Hashim, a creative technologist and interaction designer based in Montréal. Currently studying Computation Arts at Concordia University, I explore the intersection of technology, art, and human experience through interactive installations, generative systems, and creative code.</p>
+                            </div>
+
+                            <div class="info-box">
+                                <h3>CLASS</h3>
+                                <p>Creative Technologist</p>
+                            </div>
+
+                            <div class="info-box">
+                                <h3>LOCATION</h3>
+                                <p>Montréal, Quebec</p>
+                            </div>
+
+                            <div class="info-box">
+                                <h3>EDUCATION</h3>
+                                <p>Concordia University</p>
+                                <p class="subtext">BFA Computation Arts</p>
+                            </div>
+                        </div>
+
+                        <div class="stats-column">
+                            <div class="info-box">
+                                <h3>CORE STATS</h3>
+
+                                <div class="stat-bar">
+                                    <div class="stat-header">
+                                        <span class="stat-name">CREATIVE CODING</span>
+                                        <span class="stat-value">95</span>
+                                    </div>
+                                    <div class="stat-progress">
+                                        <div class="stat-fill" data-width="95"></div>
+                                    </div>
+                                    <div class="stat-items">Max/MSP • Python • PICO-8 • Processing</div>
+                                </div>
+
+                                <div class="stat-bar">
+                                    <div class="stat-header">
+                                        <span class="stat-name">MACHINE LEARNING</span>
+                                        <span class="stat-value">85</span>
+                                    </div>
+                                    <div class="stat-progress">
+                                        <div class="stat-fill" data-width="85"></div>
+                                    </div>
+                                    <div class="stat-items">Computer Vision • Neural Networks • TensorFlow</div>
+                                </div>
+
+                                <div class="stat-bar">
+                                    <div class="stat-header">
+                                        <span class="stat-name">PHYSICAL COMPUTING</span>
+                                        <span class="stat-value">90</span>
+                                    </div>
+                                    <div class="stat-progress">
+                                        <div class="stat-fill" data-width="90"></div>
+                                    </div>
+                                    <div class="stat-items">Kinect • Arduino • Sensor Integration</div>
+                                </div>
+
+                                <div class="stat-bar">
+                                    <div class="stat-header">
+                                        <span class="stat-name">DESIGN & MEDIA</span>
+                                        <span class="stat-value">88</span>
+                                    </div>
+                                    <div class="stat-progress">
+                                        <div class="stat-fill" data-width="88"></div>
+                                    </div>
+                                    <div class="stat-items">3D • Sound Design • Print & Digital</div>
+                                </div>
+
+                                <div class="stat-bar">
+                                    <div class="stat-header">
+                                        <span class="stat-name">POWERLIFTING</span>
+                                        <span class="stat-value">92</span>
+                                    </div>
+                                    <div class="stat-progress">
+                                        <div class="stat-fill special" data-width="92"></div>
+                                    </div>
+                                    <div class="stat-items">Strength • Biomechanics • Training</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-category">
-                        <h3>Machine Learning</h3>
-                        <ul>
-                            <li>FluCoMa (ML for audio)</li>
-                            <li>Neural Networks</li>
-                            <li>Computer Vision</li>
-                            <li>TensorFlow / PyTorch</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Physical Computing</h3>
-                        <ul>
-                            <li>Kinect Depth Sensors</li>
-                            <li>Arduino</li>
-                            <li>Serial Communication</li>
-                            <li>Sensor Integration</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Design & Media</h3>
-                        <ul>
-                            <li>Adobe Creative Suite</li>
-                            <li>Sound Design</li>
-                            <li>Video Production</li>
-                            <li>Print & Digital Design</li>
-                        </ul>
-                    </div>
+
+
                 </div>
-
-                <h2>Education</h2>
-                <p>
-                    <strong>Concordia University</strong>, Montréal<br>
-                    BFA in Computation Arts<br>
-                    Focus on Interactive Media, Creative Coding, and Machine Learning
-                </p>
-
-                <h2>Beyond the Studio</h2>
-                <p>
-                    Outside of my creative practice, I'm a competitive powerlifter with a deep interest in 
-                    training methodology and biomechanics. I also enjoy game development, particularly working 
-                    with constrained platforms that encourage creative problem-solving and elegant technical solutions.
-                </p>
             </article>
         </main>
     </div>
+
+    <script>
+        // GSAP Stat Bar Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Wait for page to fully load
+        window.addEventListener('load', function() {
+            console.log('Page loaded, initializing stat animations');
+
+            // Animate stat bars when they come into view
+            const statBars = document.querySelectorAll('.stat-fill');
+            const statValues = document.querySelectorAll('.stat-value');
+            const statsSection = document.querySelector('.stats-column');
+
+            console.log('Found stat bars:', statBars.length);
+
+            statBars.forEach((bar, index) => {
+                const targetWidthNum = parseInt(bar.getAttribute('data-width'));
+                const targetWidth = targetWidthNum + '%';
+                const valueElement = statValues[index];
+
+                console.log('Bar', index, 'target width:', targetWidth);
+
+                // Create scroll trigger animation
+                ScrollTrigger.create({
+                    trigger: statsSection,
+                    start: 'top 80%',
+                    once: true,
+                    onEnter: () => {
+                        console.log('Animating bar', index, 'to', targetWidth);
+
+                        // Chunky stepped animation for retro feel
+                        gsap.to(bar, {
+                            width: targetWidth,
+                            duration: 1.2,
+                            ease: 'steps(20)',
+                            delay: index * 0.2,
+                            onComplete: () => {
+                                // Flash effect when complete
+                                bar.classList.add('complete');
+                                setTimeout(() => bar.classList.remove('complete'), 300);
+
+                                // Screen shake effect
+                                gsap.to(statsSection, {
+                                    x: '+=3',
+                                    yoyo: true,
+                                    repeat: 3,
+                                    duration: 0.05,
+                                    ease: 'power1.inOut'
+                                });
+                            }
+                        });
+
+                        // Counter animation for the numbers
+                        const counter = { val: 0 };
+                        gsap.to(counter, {
+                            val: targetWidthNum,
+                            duration: 1.2,
+                            delay: index * 0.2,
+                            ease: 'steps(20)',
+                            onUpdate: () => {
+                                valueElement.textContent = Math.round(counter.val);
+                            }
+                        });
+
+                        // Bounce effect on stat name when starting
+                        const statName = bar.closest('.stat-bar').querySelector('.stat-name');
+                        gsap.fromTo(statName,
+                            { scale: 1 },
+                            {
+                                scale: 1.1,
+                                duration: 0.2,
+                                delay: index * 0.2,
+                                yoyo: true,
+                                repeat: 1,
+                                ease: 'power2.out'
+                            }
+                        );
+                    }
+                });
+            });
+
+            // Add a subtle pulse effect to completed stat values
+            ScrollTrigger.create({
+                trigger: statsSection,
+                start: 'top 80%',
+                once: true,
+                onEnter: () => {
+                    setTimeout(() => {
+                        gsap.to('.stat-value', {
+                            scale: 1.05,
+                            duration: 0.6,
+                            stagger: 0.15,
+                            repeat: -1,
+                            yoyo: true,
+                            ease: 'power1.inOut'
+                        });
+                    }, 2000);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
