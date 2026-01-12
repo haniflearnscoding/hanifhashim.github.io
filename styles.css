@@ -165,13 +165,93 @@ img {
     display: inline-block;
     width: 100%;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+    position: relative;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
 }
 
 .project-item:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
     transform: translateY(-8px) scale(1.02);
-    border-color: #c0c0c0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Mouse-reactive gradient overlay */
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-item:hover::before {
+    opacity: 1;
+}
+
+/* PICO-8 Colored Gradients - Cycling through palette */
+.project-item:nth-child(8n+1)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 163, 0, 0.15),
+        transparent 40%);
+}
+
+.project-item:nth-child(8n+2)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(41, 173, 255, 0.15),
+        transparent 40%);
+}
+
+.project-item:nth-child(8n+3)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(0, 231, 86, 0.15),
+        transparent 40%);
+}
+
+.project-item:nth-child(8n+4)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 119, 168, 0.15),
+        transparent 40%);
+}
+
+.project-item:nth-child(8n+5)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 0, 77, 0.15),
+        transparent 40%);
+}
+
+.project-item:nth-child(8n+6)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 236, 39, 0.15),
+        transparent 40%);
+}
+
+.project-item:nth-child(8n+7)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(126, 37, 83, 0.15),
+        transparent 40%);
+}
+
+.project-item:nth-child(8n+8)::before {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 204, 170, 0.15),
+        transparent 40%);
+}
+
+/* Colored border on hover */
+.project-item:nth-child(8n+1):hover { border-color: var(--pico-orange); }
+.project-item:nth-child(8n+2):hover { border-color: var(--pico-blue); }
+.project-item:nth-child(8n+3):hover { border-color: var(--pico-green); }
+.project-item:nth-child(8n+4):hover { border-color: var(--pico-pink); }
+.project-item:nth-child(8n+5):hover { border-color: var(--pico-red); }
+.project-item:nth-child(8n+6):hover { border-color: var(--pico-yellow); }
+.project-item:nth-child(8n+7):hover { border-color: var(--pico-purple); }
+.project-item:nth-child(8n+8):hover { border-color: var(--pico-peach); }
 
 .project-item:nth-child(1) { animation-delay: 0.1s; }
 .project-item:nth-child(2) { animation-delay: 0.2s; }
@@ -563,38 +643,64 @@ img {
 
 /* Contact Page */
 .contact-content {
-    max-width: 700px;
+    max-width: 1200px;
 }
 
-.contact-header-section {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    margin-bottom: 3rem;
+.contact-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+    align-items: start;
 }
 
-.contact-photo {
-    flex-shrink: 0;
+.contact-photo-full {
+    position: sticky;
+    top: 2rem;
+    position: relative;
 }
 
-.contact-photo img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+.contact-photo-full > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     object-fit: cover;
-    border: 3px solid var(--bg-secondary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    object-position: center 20%;
+    max-height: 600px;
 }
 
-.contact-text {
-    flex: 1;
+.contact-info-section {
+    position: relative;
+}
+
+.pixel-walker {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.pixel-sprite-walking {
+    width: 48px !important;
+    height: 48px !important;
+    image-rendering: pixelated;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.contact-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .contact-intro {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-secondary);
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     font-weight: 300;
 }
 
@@ -811,15 +917,23 @@ img {
         padding: 2rem 1.5rem;
     }
 
-    .contact-header-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .contact-photo img {
-        width: 120px;
-        height: 120px;
+    .contact-photo-full {
+        position: static;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .pixel-walker {
+        display: none;
+    }
+
+    .pixel-sprite-walking {
+        display: none;
     }
 
     .projects-grid {

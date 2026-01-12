@@ -33,49 +33,132 @@
 
         <main class="main-content">
             <article class="contact-content">
-                <div class="contact-header-section">
-                    <div class="contact-photo">
+                <div class="contact-layout">
+                    <!-- Left: Full Length Photo -->
+                    <div class="contact-photo-full">
                         <img src="images/AmyLam240669.jpg" alt="Hanif Hashim">
                     </div>
-                    <div class="contact-text">
+
+                    <!-- Right: Contact Information -->
+                    <div class="contact-info-section">
+                        <!-- Walking Pixel Companion -->
+                        <div class="pixel-walker">
+                            <img src="favicon-frame-0.png" alt="Pixel Hanif Walking" class="pixel-sprite-walking">
+                        </div>
                         <h2 style="font-family: 'Crimson Pro', Georgia, serif; font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem;">Contact</h2>
 
                         <p class="contact-intro">
                             Interested in collaboration, have a project in mind, or want to discuss
                             interactive media and creative technology? I'd be happy to connect.
                         </p>
-                    </div>
-                </div>
 
-                <div class="contact-list">
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <a href="mailto:your.hanifabdul123@hotmail.com">hanifabdul123@hotmail.com</a>
-                    </div>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <h3>Email</h3>
+                                <a href="mailto:your.hanifabdul123@hotmail.com">hanifabdul123@hotmail.com</a>
+                            </div>
 
-                    <div class="contact-item">
-                        <h3>GitHub</h3>
-                        <a href="https://github.com/haniflearnscoding" target="_blank" rel="noopener">github.com/haniflearnscoding</a>
-                    </div>
+                            <div class="contact-item">
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/haniflearnscoding" target="_blank" rel="noopener">github.com/haniflearnscoding</a>
+                            </div>
 
-                    <div class="contact-item">
-                        <h3>LinkedIn</h3>
-                        <a href="https://linkedin.com/in/hanif-hashim-218bba204" target="_blank" rel="noopener">linkedin.com/in/hanif-hashim-218bba204/</a>
-                    </div>
+                            <div class="contact-item">
+                                <h3>LinkedIn</h3>
+                                <a href="https://linkedin.com/in/hanif-hashim-218bba204" target="_blank" rel="noopener">linkedin.com/in/hanif-hashim-218bba204/</a>
+                            </div>
 
-                    <div class="contact-item">
-                        <h3>Instagram</h3>
-                        <a href="https://instagram.com/hanifdoesdesign" target="_blank" rel="noopener">instagram.com/hanifdoesdesign/</a>
-                    </div>
-                </div>
+                            <div class="contact-item">
+                                <h3>Instagram</h3>
+                                <a href="https://instagram.com/hanifdoesdesign" target="_blank" rel="noopener">instagram.com/hanifdoesdesign/</a>
+                            </div>
+                        </div>
 
-                <div class="contact-note">
-                    <p><strong>Based in:</strong> Montréal, Quebec</p>
-                    <p><strong>Available for:</strong> Freelance projects, collaborations, exhibitions, and commissioned work</p>
-                    <p><strong>Response time:</strong> Usually within 48 hours</p>
+                        <div class="contact-note">
+                            <p><strong>Based in:</strong> Montréal, Quebec</p>
+                            <p><strong>Available for:</strong> Freelance projects, collaborations, exhibitions, and commissioned work</p>
+                            <p><strong>Response time:</strong> Usually within 48 hours</p>
+                        </div>
+                    </div>
                 </div>
             </article>
         </main>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        // Walking Pixel Companion Animation
+        const walker = document.querySelector('.pixel-walker');
+        const sprite = document.querySelector('.pixel-sprite-walking');
+        const contactItems = document.querySelectorAll('.contact-item');
+
+        const walkFrames = ['favicon-frame-0.png', 'favicon-frame-1.png'];
+        let frameIndex = 0;
+        let isWalking = false;
+
+        // Animate walking sprite
+        function animateWalkSprite() {
+            if (isWalking) {
+                frameIndex = (frameIndex + 1) % walkFrames.length;
+                sprite.src = walkFrames[frameIndex];
+            }
+        }
+
+        const spriteInterval = setInterval(animateWalkSprite, 200);
+
+        // Walk to each contact item sequentially
+        function startWalkingTour() {
+            contactItems.forEach((item, index) => {
+                const itemRect = item.getBoundingClientRect();
+                const containerRect = document.querySelector('.contact-info-section').getBoundingClientRect();
+
+                const targetY = item.offsetTop - 20;
+                const targetX = -60;
+
+                const delay = index * 4; // 4 seconds per item
+
+                // Walk to position
+                gsap.to(walker, {
+                    x: targetX,
+                    y: targetY,
+                    duration: 2,
+                    delay: delay,
+                    ease: 'none',
+                    onStart: () => {
+                        isWalking = true;
+                        walker.style.transform = 'scaleX(1)'; // Face right
+                    },
+                    onComplete: () => {
+                        isWalking = false;
+                        sprite.src = 'favicon-frame-2.png'; // Point/present gesture
+
+                        // Highlight the contact item
+                        item.style.transition = 'all 0.3s ease';
+                        item.style.transform = 'translateX(10px)';
+                        item.style.background = 'rgba(255, 163, 0, 0.1)';
+
+                        // Remove highlight after delay
+                        setTimeout(() => {
+                            item.style.transform = '';
+                            item.style.background = '';
+                        }, 1500);
+                    }
+                });
+            });
+
+            // Loop the animation
+            const totalDuration = contactItems.length * 4000 + 2000;
+            setTimeout(() => {
+                // Reset and restart
+                gsap.set(walker, { x: 0, y: 0 });
+                setTimeout(startWalkingTour, 1000);
+            }, totalDuration);
+        }
+
+        // Start the tour when page loads
+        window.addEventListener('load', () => {
+            setTimeout(startWalkingTour, 1000);
+        });
+    </script>
 </body>
 </html>
