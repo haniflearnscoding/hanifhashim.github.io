@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clocking Out - Hanif Hashim</title>
+    <link rel="icon" type="image/png" href="favicon-frame-0.png">
+    <script src="favicon-animation.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .ggj-hero {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: #1a2a2a;
+        }
+        .ggj-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: pixelated;
+        }
+        .sprite-float {
+            position: absolute;
+            image-rendering: pixelated;
+            animation: float 3s ease-in-out infinite;
+        }
+        .sprite-float.player {
+            width: 48px;
+            bottom: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .sprite-float.zombie {
+            width: 48px;
+            bottom: 25%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+        .sprite-float.mask {
+            width: 32px;
+            top: 20%;
+            right: 25%;
+            animation-delay: 0.5s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .theme-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #2d4a4a, #1a2a2a);
+            color: #7fdbca;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: 'VT323', monospace;
+            font-size: 1.25rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        .theme-badge img {
+            width: 20px;
+            height: 20px;
+            image-rendering: pixelated;
+        }
+        .evolution-section {
+            background: #0d1515;
+            padding: 3rem 2rem;
+            margin: 2rem -2rem;
+            border-radius: 0;
+        }
+        .evolution-title {
+            font-family: 'VT323', monospace;
+            font-size: 2rem;
+            color: #7fdbca;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+        .prototype-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .prototype-stage {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .prototype-stage:nth-child(even) {
+            direction: rtl;
+        }
+        .prototype-stage:nth-child(even) > * {
+            direction: ltr;
+        }
+        .prototype-video {
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 0 30px rgba(127, 219, 202, 0.2);
+        }
+        .prototype-video video {
+            width: 100%;
+            display: block;
+        }
+        .prototype-info {
+            padding: 1rem;
+        }
+        .prototype-label {
+            font-family: 'VT323', monospace;
+            font-size: 1.5rem;
+            color: #7fdbca;
+            margin-bottom: 0.5rem;
+        }
+        .prototype-desc {
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+        .team-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a2a2a, #0d1515);
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .team-sprites {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .team-sprites img {
+            width: 48px;
+            height: 48px;
+            image-rendering: pixelated;
+        }
+        .team-info h3 {
+            font-family: 'VT323', monospace;
+            color: #7fdbca;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .team-info p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+        .gameplay-showcase {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        .gameplay-showcase video {
+            width: 100%;
+            display: block;
+        }
+        .ggj-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .ggj-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: #1a2a2a;
+            color: #7fdbca;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            border: 1px solid #2d4a4a;
+        }
+        .ggj-link:hover {
+            background: #2d4a4a;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .prototype-stage {
+                grid-template-columns: 1fr;
+            }
+            .prototype-stage:nth-child(even) {
+                direction: ltr;
+            }
+            .team-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .evolution-section {
+                padding: 2rem 1rem;
+                margin: 2rem -1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h1 class="site-name"><a href="index.html">Hanif Hashim</a></h1>
+                <p class="site-tagline">Interactive media artist and creative technologist.</p>
+
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+
+            <footer class="sidebar-footer">
+                <p>&copy; 2026 Abdul Hanif Hashim</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <article class="case-study">
+                <!-- Hero with splashscreen -->
+                <div class="ggj-hero">
+                    <img src="images/ggj-2026/sprites/splashscreen.png" alt="Clocking Out - A pixel art hospital survival game">
+                </div>
+
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <span class="theme-badge">
+                            <img src="images/ggj-2026/sprites/Mask.png" alt="Mask">
+                            GGJ 2026 Theme: MASK
+                        </span>
+                        <h1>Clocking Out</h1>
+                        <p class="case-study-tagline">Survive the ward. Find the masks. Clock out alive.</p>
+                    </div>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Event</span>
+                            <span class="meta-value">Global Game Jam 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">48 Hours</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Game Designer & Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">The Concept</h2>
+                    <p class="section-content-large">Your shift is almost over, but the hospital ward has descended into chaos. Infectious patients roam the halls, and your only protection? The surgical masks scattered throughout the building. Find them, survive, and clock out before your time runs out.</p>
+                    <p class="section-content">The theme "Mask" inspired us to explore healthcare workers' reality - where masks are the thin line between safety and infection. As a nurse trying to escape an overrun ward, every mask you collect extends your survival. It's a love letter to frontline workers wrapped in retro pixel art horror.</p>
+
+                    <div class="ggj-links">
+                        <a href="https://thebesthanif.itch.io/clocked-out" target="_blank" class="ggj-link">
+                            <span>Play on itch.io</span>
+                        </a>
+                        <a href="https://globalgamejam.org/games/2026/clocking-out-5" target="_blank" class="ggj-link">
+                            <span>View on GGJ</span>
+                        </a>
+                        <a href="https://github.com/haniflearnscoding/GGJ-2026" target="_blank" class="ggj-link">
+                            <span>View Source</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="team-section">
+                    <div class="team-sprites">
+                        <img src="images/ggj-2026/sprites/P_front.png" alt="Catherine">
+                        <img src="images/ggj-2026/sprites/P_front.png" alt="Hanif">
+                        <img src="images/ggj-2026/sprites/Z_front.png" alt="Clinton">
+                    </div>
+                    <div class="team-info">
+                        <h3>THE TEAM</h3>
+                        <p>Catherine, Hanif & Clinton</p>
+                    </div>
+                </div>
+
+                <!-- Gameplay Video -->
+                <div class="gameplay-showcase">
+                    <video controls poster="images/ggj-2026/Screenshot 2026-02-01 at 6.44.25 PM (2).png">
+                        <source src="images/ggj-2026/Screen_Recording_2026-02-01_at_9.56.51_AM.mov" type="video/quicktime">
+                        <source src="images/ggj-2026/Screen_Recording_2026-02-01_at_9.56.51_AM.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="image-caption">Final gameplay - navigate the ward, collect masks, avoid the infected patients</p>
+
+                <!-- Evolution Section with Prototypes -->
+                <div class="evolution-section">
+                    <h2 class="evolution-title">// DEVELOPMENT EVOLUTION</h2>
+
+                    <div class="prototype-timeline">
+                        <!-- Prototype 1 -->
+                        <div class="prototype-stage">
+                            <div class="prototype-video">
+                                <video autoplay loop muted playsinline>
+                                    <source src="images/ggj-2026/prototype1.mov" type="video/quicktime">
+                                    <source src="images/ggj-2026/prototype1.mov" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="prototype-info">
+                                <div class="prototype-label">PROTOTYPE 01 // MOVEMENT</div>
+                                <p class="prototype-desc">Day one: establishing the core. Grid-based movement through tight hospital corridors. The nurse sprite takes shape - navigating the maze of gurneys and medical equipment. Basic collision detection and the foundation of our top-down perspective.</p>
+                            </div>
+                        </div>
+
+                        <!-- Prototype 2 -->
+                        <div class="prototype-stage">
+                            <div class="prototype-video">
+                                <video autoplay loop muted playsinline>
+                                    <source src="images/ggj-2026/prototype2.mov" type="video/quicktime">
+                                    <source src="images/ggj-2026/prototype2.mov" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="prototype-info">
+                                <div class="prototype-label">PROTOTYPE 02 // THREAT</div>
+                                <p class="prototype-desc">Enter the infected patients. They now wander the halls with basic AI pathfinding, coughing and spreading contagion. The tension builds - contact means losing precious health. The mask collection mechanic takes form, creating risk-reward decisions throughout the ward.</p>
+                            </div>
+                        </div>
+
+                        <!-- Prototype 3 -->
+                        <div class="prototype-stage">
+                            <div class="prototype-video">
+                                <video autoplay loop muted playsinline>
+                                    <source src="images/ggj-2026/prototype3.mov" type="video/quicktime">
+                                    <source src="images/ggj-2026/prototype3.mov" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="prototype-info">
+                                <div class="prototype-label">PROTOTYPE 03 // POLISH</div>
+                                <p class="prototype-desc">The final push. UI elements lock into place - health hearts, the ticking clock, mask counter. Sound design adds urgency. The pixel art background transforms empty space into a chaotic hospital ward. Every interaction gets that satisfying "juice."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">The 48-Hour Sprint</h2>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h3>Friday Night: Find the Fun</h3>
+                            <p>Theme reveal hit at 5pm. By midnight, we had our concept locked - a hospital survival game where masks are both protection and resource. Paper prototyping helped us nail the core loop before writing a single line of code.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Saturday: The Crunch</h3>
+                            <p>Sprites came to life. The patient AI went through three iterations before feeling threatening but fair. We cut planned features ruthlessly - no inventory system, no multiple wards. Just one tight, replayable experience.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Sunday: Ship It</h3>
+                            <p>Polish day. Added screen shake on damage, particle effects for pickups, and that satisfying clock-out animation. Playtested with fresh eyes from other teams. Submitted with an hour to spare.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Tech Stack</h2>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Aseprite</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="case-study-footer">
+                    <p>Global Game Jam 2026 Entry // Theme: Mask // Built in 48 Hours</p>
+                </div>
+
+                <a href="index.html" class="back-link">← Back to Projects</a>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
