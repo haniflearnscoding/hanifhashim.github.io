@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tactile Accessibility Maps - Hanif Hashim</title>
+    <link rel="icon" type="image/png" href="favicon-frame-0.png">
+    <script src="favicon-animation.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h1 class="site-name"><a href="index.html">Hanif Hashim</a></h1>
+                <p class="site-tagline">Interactive media artist and creative technologist.</p>
+
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+
+            <footer class="sidebar-footer">
+                <p>&copy; 2026 Abdul Hanif Hashim</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <article class="case-study">
+                <div class="case-study-hero">
+                    <img src="images/tactile-maps-hero.png" alt="Tactile accessibility map of Concordia SGW campus">
+                </div>
+
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h1>Tactile Accessibility Maps</h1>
+                        <p class="case-study-tagline">A custom print pipeline mapping accessible routes through Concordia's SGW campus</p>
+                    </div>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Designer & Developer</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Technologies</span>
+                            <span class="meta-value">JavaScript, Three.js, GeoJSON, SVG, STL</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Course</span>
+                            <span class="meta-value">CART484 — Concordia University</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Concept</h2>
+                    <p class="section-content-large">Tactile Accessibility Maps is a synthesis project that builds a browser-based pipeline for generating tactile campus maps—combining graphic design, web development, and 3D printing into a single workflow. Inspired by a real WSP accessibility study of Concordia's SGW campus, the project asks: what does it mean to make a map not just readable, but physically feelable?</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Context</h2>
+                    <p class="section-content">The project began with a WSP report on mobility and universal accessibility through the Concordia passage connecting Pavillons LB and H—two buildings joined by an underground metro-level corridor. The report identified two route types: an active path for able-bodied users and a reduced-mobility path for universal accessibility. These routes had never been visualized in three dimensions or prepared for tactile output.</p>
+                    <p class="section-content">Rather than working in a conventional design tool, I built the entire pipeline from scratch in JavaScript—from raw OpenStreetMap data to an interactive 3D preview to a print-ready STL file for CNC embossing.</p>
+                </div>
+
+                <div class="case-study-image case-study-image--full">
+                    <img src="images/tactile-maps-spread.png" alt="Two color variants of the SGW campus tactile map">
+                    <p class="image-caption">Two color variants of the SGW campus tactile map, printed on dark stock. Left: full color build. Right: route-emphasis variant.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Pipeline</h2>
+                    <p class="section-content">The system runs as a 6-stage browser pipeline. Stage 1 loads OpenStreetMap GeoJSON of the SGW campus. Stage 2 filters features into typed layers—buildings, pedestrian paths, entrances, and accessibility routes. Stage 3 applies Douglas-Peucker simplification to reduce vertex count while preserving tactile legibility. Stage 4 attaches tactile specifications per the ProBlind Standard v4: stroke widths, dash patterns, and relief heights measured in millimetres. Stage 5 renders a 2D SVG at A4 scale for print review. Stage 6 exports a watertight binary STL where every feature is extruded to a physical height—buildings at 2mm, paths at 1mm, and the WSP routes at 1.5mm so they're haptically distinct.</p>
+                    <p class="section-content">The WSP accessibility routes were manually traced from the floor plan PDF and encoded as GeoJSON LineStrings—the active route rendered in pure red, the accessible route in pure green, using unlit materials so the colors survive Photoshop's Black & White channel separation cleanly.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Key Features</h2>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h3>WSP Route Overlay</h3>
+                            <p>Real accessibility routes from a Concordia commission study are threaded through the pipeline as a distinct layer, rendered wider and taller than standard paths for haptic distinction</p>
+                        </div>
+                        <div class="feature">
+                            <h3>3D Print Ready</h3>
+                            <p>Every output is a watertight binary STL with tactile heights following ProBlind Standard v4—buildings, paths, and routes each at distinct physical relief levels</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Grayscale Separation</h3>
+                            <p>Routes use unlit materials with fully saturated hues so Photoshop's Black & White adjustment cleanly separates active and accessible routes into distinct tonal values</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Interactive 3D Preview</h3>
+                            <p>A Three.js viewer with orbit controls, preset camera angles, ghost-mode building opacity, and high-res PNG export at up to A3 300dpi resolution</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-image">
+                    <img src="images/tactile-maps-spec.png" alt="Color to grayscale treatment of the campus map">
+                    <p class="image-caption">Color-to-grayscale treatment showing how accessibility route colors separate across print modes. Top: dark ground / grayscale. Bottom: navy ground / full color.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Technical Stack</h2>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Three.js</span>
+                        <span class="tech-tag">GeoJSON / OSM</span>
+                        <span class="tech-tag">SVG</span>
+                        <span class="tech-tag">Binary STL</span>
+                        <span class="tech-tag">Turf.js</span>
+                        <span class="tech-tag">Photoshop</span>
+                        <span class="tech-tag">ProBlind Standard v4</span>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Impact & Reflection</h2>
+                    <p class="section-content">The project forced a question that graphic design rarely asks: what does a map feel like? Tactile cartography has a long history in accessibility design, but it's rarely approached as a creative medium. By building the pipeline rather than using existing tools, every design decision—stroke width, relief height, dash interval—became a deliberate choice with physical consequences.</p>
+                    <p class="section-content">The WSP routes added a layer I hadn't anticipated: the gap between an accessible path on paper and the actual experience of navigating it. The green route on the map is longer, less direct, and more complex than the red one. That asymmetry is the real subject of the work.</p>
+                </div>
+
+                <a href="index.html" class="back-link">← Back to Projects</a>
+            </article>
+        </main>
+    </div>
+</body>
+</html>

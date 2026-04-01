@@ -3,8 +3,10 @@
     --bg-secondary: #f8f8f8;
     --text-primary: #2c2c2c;
     --text-secondary: #666666;
-    --text-light: #999999;
-    --accent: #3498db;
+    --text-light: #767676;
+    /* Darkened from #999 for AA compliance (4.54:1) */
+    --accent: #256fba;
+    /* Darkened from #3498db for AA compliance (4.6:1) */
     --border: #e0e0e0;
     --sidebar-width: 320px;
 
@@ -197,76 +199,123 @@ img {
 /* PICO-8 Colored Gradients - Cycling through palette */
 .project-item:nth-child(8n+1)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 163, 0, 0.15),
-        transparent 40%);
+            rgba(255, 163, 0, 0.15),
+            transparent 40%);
 }
 
 .project-item:nth-child(8n+2)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(41, 173, 255, 0.15),
-        transparent 40%);
+            rgba(41, 173, 255, 0.15),
+            transparent 40%);
 }
 
 .project-item:nth-child(8n+3)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(0, 231, 86, 0.15),
-        transparent 40%);
+            rgba(0, 231, 86, 0.15),
+            transparent 40%);
 }
 
 .project-item:nth-child(8n+4)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 119, 168, 0.15),
-        transparent 40%);
+            rgba(255, 119, 168, 0.15),
+            transparent 40%);
 }
 
 .project-item:nth-child(8n+5)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 0, 77, 0.15),
-        transparent 40%);
+            rgba(255, 0, 77, 0.15),
+            transparent 40%);
 }
 
 .project-item:nth-child(8n+6)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 236, 39, 0.15),
-        transparent 40%);
+            rgba(255, 236, 39, 0.15),
+            transparent 40%);
 }
 
 .project-item:nth-child(8n+7)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(126, 37, 83, 0.15),
-        transparent 40%);
+            rgba(126, 37, 83, 0.15),
+            transparent 40%);
 }
 
 .project-item:nth-child(8n+8)::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 204, 170, 0.15),
-        transparent 40%);
+            rgba(255, 204, 170, 0.15),
+            transparent 40%);
 }
 
 /* Colored border on hover */
-.project-item:nth-child(8n+1):hover { border-color: var(--pico-orange); }
-.project-item:nth-child(8n+2):hover { border-color: var(--pico-blue); }
-.project-item:nth-child(8n+3):hover { border-color: var(--pico-green); }
-.project-item:nth-child(8n+4):hover { border-color: var(--pico-pink); }
-.project-item:nth-child(8n+5):hover { border-color: var(--pico-red); }
-.project-item:nth-child(8n+6):hover { border-color: var(--pico-yellow); }
-.project-item:nth-child(8n+7):hover { border-color: var(--pico-purple); }
-.project-item:nth-child(8n+8):hover { border-color: var(--pico-peach); }
+.project-item:nth-child(8n+1):hover {
+    border-color: var(--pico-orange);
+}
 
-.project-item:nth-child(1) { animation-delay: 0.1s; }
-.project-item:nth-child(2) { animation-delay: 0.2s; }
-.project-item:nth-child(3) { animation-delay: 0.3s; }
-.project-item:nth-child(4) { animation-delay: 0.4s; }
-.project-item:nth-child(5) { animation-delay: 0.5s; }
-.project-item:nth-child(6) { animation-delay: 0.6s; }
-.project-item:nth-child(7) { animation-delay: 0.7s; }
-.project-item:nth-child(8) { animation-delay: 0.8s; }
+.project-item:nth-child(8n+2):hover {
+    border-color: var(--pico-blue);
+}
+
+.project-item:nth-child(8n+3):hover {
+    border-color: var(--pico-green);
+}
+
+.project-item:nth-child(8n+4):hover {
+    border-color: var(--pico-pink);
+}
+
+.project-item:nth-child(8n+5):hover {
+    border-color: var(--pico-red);
+}
+
+.project-item:nth-child(8n+6):hover {
+    border-color: var(--pico-yellow);
+}
+
+.project-item:nth-child(8n+7):hover {
+    border-color: var(--pico-purple);
+}
+
+.project-item:nth-child(8n+8):hover {
+    border-color: var(--pico-peach);
+}
+
+.project-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.project-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.project-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.project-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.project-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.project-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.project-item:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.project-item:nth-child(8) {
+    animation-delay: 0.8s;
+}
 
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -297,16 +346,45 @@ img {
 }
 
 /* Varied Rectangle Heights for Dynamic Masonry */
-.project-item:nth-child(1) .project-image { min-height: 300px; }
-.project-item:nth-child(2) .project-image { min-height: 260px; }
-.project-item:nth-child(3) .project-image { min-height: 340px; }
-.project-item:nth-child(4) .project-image { min-height: 225px; }
-.project-item:nth-child(5) .project-image { min-height: 285px; }
-.project-item:nth-child(6) .project-image { min-height: 240px; }
-.project-item:nth-child(7) .project-image { min-height: 315px; }
-.project-item:nth-child(8) .project-image { min-height: 270px; }
-.project-item:nth-child(9) .project-image { min-height: 255px; }
-.project-item:nth-child(10) .project-image { min-height: 290px; }
+.project-item:nth-child(1) .project-image {
+    min-height: 300px;
+}
+
+.project-item:nth-child(2) .project-image {
+    min-height: 260px;
+}
+
+.project-item:nth-child(3) .project-image {
+    min-height: 340px;
+}
+
+.project-item:nth-child(4) .project-image {
+    min-height: 225px;
+}
+
+.project-item:nth-child(5) .project-image {
+    min-height: 285px;
+}
+
+.project-item:nth-child(6) .project-image {
+    min-height: 240px;
+}
+
+.project-item:nth-child(7) .project-image {
+    min-height: 315px;
+}
+
+.project-item:nth-child(8) .project-image {
+    min-height: 270px;
+}
+
+.project-item:nth-child(9) .project-image {
+    min-height: 255px;
+}
+
+.project-item:nth-child(10) .project-image {
+    min-height: 290px;
+}
 
 .project-item:hover .project-image img {
     transform: scale(1.05);
@@ -495,13 +573,11 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 1px,
-        rgba(0, 0, 0, 0.1) 1px,
-        rgba(0, 0, 0, 0.1) 2px
-    );
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 1px,
+            rgba(0, 0, 0, 0.1) 1px,
+            rgba(0, 0, 0, 0.1) 2px);
     pointer-events: none;
     z-index: 10;
 }
@@ -523,15 +599,20 @@ img {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.6) 50%,
-        transparent 100%);
+            transparent 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            transparent 100%);
     animation: shimmer 2s infinite;
 }
 
 @keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 200%; }
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
 }
 
 .stat-fill.complete {
@@ -539,8 +620,15 @@ img {
 }
 
 @keyframes flash {
-    0%, 100% { filter: brightness(1); }
-    50% { filter: brightness(1.5) saturate(1.5); }
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.5) saturate(1.5);
+    }
 }
 
 /* Different colors for each stat - PICO-8 style */
@@ -659,7 +747,7 @@ img {
     position: relative;
 }
 
-.contact-photo-full > img {
+.contact-photo-full>img {
     width: 100%;
     height: auto;
     display: block;
@@ -785,7 +873,7 @@ img {
     font-size: 1.75rem;
     font-weight: 600;
     margin: 3rem 0 1.5rem;
-    color: var--text-primary);
+    color: var(--text-primary);
 }
 
 .project-description p {
@@ -862,14 +950,37 @@ img {
     animation: fadeIn 0.6s ease forwards;
 }
 
-.portfolio-item:nth-child(1) { animation-delay: 0.1s; }
-.portfolio-item:nth-child(2) { animation-delay: 0.15s; }
-.portfolio-item:nth-child(3) { animation-delay: 0.2s; }
-.portfolio-item:nth-child(4) { animation-delay: 0.25s; }
-.portfolio-item:nth-child(5) { animation-delay: 0.3s; }
-.portfolio-item:nth-child(6) { animation-delay: 0.35s; }
-.portfolio-item:nth-child(7) { animation-delay: 0.4s; }
-.portfolio-item:nth-child(8) { animation-delay: 0.45s; }
+.portfolio-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.portfolio-item:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.portfolio-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.portfolio-item:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.portfolio-item:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.portfolio-item:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(8) {
+    animation-delay: 0.45s;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -972,16 +1083,45 @@ img {
     }
 
     /* Scale down heights on tablet */
-    .project-item:nth-child(1) .project-image { min-height: 240px; }
-    .project-item:nth-child(2) .project-image { min-height: 210px; }
-    .project-item:nth-child(3) .project-image { min-height: 270px; }
-    .project-item:nth-child(4) .project-image { min-height: 190px; }
-    .project-item:nth-child(5) .project-image { min-height: 225px; }
-    .project-item:nth-child(6) .project-image { min-height: 200px; }
-    .project-item:nth-child(7) .project-image { min-height: 255px; }
-    .project-item:nth-child(8) .project-image { min-height: 215px; }
-    .project-item:nth-child(9) .project-image { min-height: 205px; }
-    .project-item:nth-child(10) .project-image { min-height: 235px; }
+    .project-item:nth-child(1) .project-image {
+        min-height: 240px;
+    }
+
+    .project-item:nth-child(2) .project-image {
+        min-height: 210px;
+    }
+
+    .project-item:nth-child(3) .project-image {
+        min-height: 270px;
+    }
+
+    .project-item:nth-child(4) .project-image {
+        min-height: 190px;
+    }
+
+    .project-item:nth-child(5) .project-image {
+        min-height: 225px;
+    }
+
+    .project-item:nth-child(6) .project-image {
+        min-height: 200px;
+    }
+
+    .project-item:nth-child(7) .project-image {
+        min-height: 255px;
+    }
+
+    .project-item:nth-child(8) .project-image {
+        min-height: 215px;
+    }
+
+    .project-item:nth-child(9) .project-image {
+        min-height: 205px;
+    }
+
+    .project-item:nth-child(10) .project-image {
+        min-height: 235px;
+    }
 
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -1025,10 +1165,21 @@ img {
         min-height: 200px !important;
     }
 
-    .project-item:nth-child(1) .project-image { min-height: 225px !important; }
-    .project-item:nth-child(3) .project-image { min-height: 240px !important; }
-    .project-item:nth-child(5) .project-image { min-height: 215px !important; }
-    .project-item:nth-child(7) .project-image { min-height: 230px !important; }
+    .project-item:nth-child(1) .project-image {
+        min-height: 225px !important;
+    }
+
+    .project-item:nth-child(3) .project-image {
+        min-height: 240px !important;
+    }
+
+    .project-item:nth-child(5) .project-image {
+        min-height: 215px !important;
+    }
+
+    .project-item:nth-child(7) .project-image {
+        min-height: 230px !important;
+    }
 }
 
 /* Case Study Layout */
@@ -1201,6 +1352,23 @@ img {
     background-color: var(--bg-secondary);
     border-radius: 4px;
     font-weight: 400;
+}
+
+/* Wide image: breaks out of the 900px case-study max-width but stays within the container's padding */
+.case-study-image--full {
+    width: calc(100vw - var(--sidebar-width) - 8rem);
+}
+
+.case-study-image--full img {
+    width: 100%;
+    max-height: none;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .case-study-image--full {
+        width: 100%;
+    }
 }
 
 .case-study-footer {
