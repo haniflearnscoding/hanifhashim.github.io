@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Coding Performance - Hanif Hashim</title>
+    <link rel="icon" type="image/png" href="favicon-frame-0.png">
+    <script src="favicon-animation.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ── Hero canvas ── */
+        .hydra-hero {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+        .hydra-hero canvas {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+
+        /* ── Code blocks ── */
+        .code-block {
+            background: #0d0d0d;
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .code-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .code-block pre {
+            margin: 0;
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+            font-size: 0.82rem;
+            line-height: 1.7;
+            color: #c8c8c8;
+            white-space: pre;
+        }
+        .code-block pre .comment {
+            color: #555;
+        }
+        .code-block pre .param {
+            color: #9ec4e0;
+        }
+
+        /* ── Recording placeholder ── */
+        .recording-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #0d0d0d;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .recording-placeholder p {
+            font-size: 0.85rem;
+            color: #444;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Tool tags ── */
+        .tool-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+        .tool-tag {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.75rem;
+            border: 1px solid #333;
+            border-radius: 2px;
+            color: #888;
+            background: #0d0d0d;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h1 class="site-name"><a href="index.html">Hanif Hashim</a></h1>
+                <p class="site-tagline">Interactive media artist and creative technologist.</p>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+            <footer class="sidebar-footer">
+                <p>&copy; 2026 Abdul Hanif Hashim</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <article class="case-study">
+
+                <!-- Live Hydra canvas as hero -->
+                <div class="hydra-hero">
+                    <canvas id="hydra-canvas"></canvas>
+                </div>
+
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h1>Live Coding Performance</h1>
+                        <p class="case-study-tagline">Live audiovisual performance for Strudel and Hydra</p>
+                    </div>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Performer & Coder</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Tools</span>
+                            <span class="meta-value">Strudel · Hydra · WebGL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">About</h2>
+                    <p class="section-content-large">A live performance written and executed in real time — music and visuals coded simultaneously in front of an audience.</p>
+                    <p class="section-content">Using Strudel for pattern-based audio and Hydra for WebGL visual synthesis, the piece was composed and performed live. The code above is running right now — the same sketch from the performance, adapted to breathe on its own without a microphone feed.</p>
+                </div>
+
+                <!-- Recording — placeholder until prof sends it -->
+                <div class="case-study-section">
+                    <h2 class="section-label">Recording</h2>
+                    <div class="recording-placeholder">
+                        <p>Recording coming soon.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">The Visuals</h2>
+                    <p class="section-content">The Hydra sketch is built around an oscillator run through a kaleidoscope and pixelation pass. During the performance, the modulation depth, pixel grid, and feedback were driven by live audio analysis — bass frequencies pushing the geometry, mids controlling modulation depth. On this page, those values are replaced by time-based oscillations so the piece runs without a microphone.</p>
+
+                    <div class="code-block">
+                        <p class="code-label">Hydra — original (audio-reactive)</p>
+                        <pre><span class="comment">spd = 0.4
+kali = 1
+px = 20
+sat = 2
+fb = 0.1
+mod = 0.3</span>
+
+osc(10, 0.2, 1.5)
+  .color(1.2, 1, 0.8)
+  .rotate(<span class="param">() => time * spd</span>)
+  .modulate(noise(3, 0.2).scale(<span class="param">() => 1 + a.fft[0] * 3</span>), <span class="param">() => a.fft[1] * mod</span>)
+  .kaleid(<span class="param">() => kali</span>)
+  .pixelate(<span class="param">() => px + a.fft[0] * 40</span>, <span class="param">() => px + a.fft[0] * 80</span>)
+  .posterize(6).contrast(1.8).saturate(<span class="param">() => sat</span>)
+  .blend(src(o0), <span class="param">() => fb</span>)
+  .out(o0)
+
+<span class="comment">// 0–3   audio reactivity, colour change
+// 3–6   push kali and spd, feedback
+// 6–9   osc freq change — variation of 01.hydra</span></pre>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">The Score</h2>
+                    <p class="section-content">The audio was written in Strudel — a browser-based live coding environment for pattern music. The pattern below is the score from the performance.</p>
+
+                    <div class="code-block">
+                        <p class="code-label">Strudel — pattern score</p>
+                        <pre><span class="comment">// Paste Strudel code here</span></pre>
+                    </div>
+                </div>
+
+                <a href="index.html" class="back-link">← Back to Projects</a>
+
+            </article>
+        </main>
+    </div>
+
+    <!-- Hydra synth -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script>
+        const canvas = document.getElementById('hydra-canvas');
+
+        // Match canvas resolution to its display size
+        canvas.width  = canvas.offsetWidth  || 1280;
+        canvas.height = canvas.offsetHeight || 720;
+
+        const hydra = new Hydra({
+            canvas,
+            detectAudio: false,
+            makeGlobal: true
+        });
+
+        // Original sketch — a.fft replaced with time-based oscillations
+        var spd = 0.4;
+        var kali = 1;
+        var px = 20;
+        var sat = 2;
+        var fb = 0.1;
+        var mod = 0.3;
+
+        osc(10, 0.2, 1.5)
+            .color(1.2, 1, 0.8)
+            .rotate(() => time * spd)
+            .modulate(
+                noise(3, 0.2).scale(() => 1 + (Math.sin(time * 0.7) * 0.5 + 0.5) * 3),
+                () => (Math.cos(time * 0.5) * 0.5 + 0.5) * mod
+            )
+            .kaleid(() => kali)
+            .pixelate(
+                () => px + (Math.sin(time * 0.7) * 0.5 + 0.5) * 40,
+                () => px + (Math.sin(time * 0.7) * 0.5 + 0.5) * 80
+            )
+            .posterize(6)
+            .contrast(1.8)
+            .saturate(() => 2 * Math.max(0, Math.sin(time * 0.3)))
+            .blend(src(o0), () => fb)
+            .out(o0);
+    </script>
+</body>
+</html>

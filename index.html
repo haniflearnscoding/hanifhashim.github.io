@@ -80,6 +80,23 @@
                 </article>
 
                 <article class="project-item">
+                    <a href="livecoding.html" class="project-link">
+                        <div class="project-image" style="background: #000;">
+                            <canvas id="hydra-thumb" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Live Coding Performance</h2>
+                            <p class="project-subtitle">Audiovisual performance written and executed live in Strudel and Hydra</p>
+                            <div class="project-tags">
+                                <span class="tag">Live Coding</span>
+                                <span class="tag">Hydra</span>
+                                <span class="tag">Strudel</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
                     <a href="tactile-accessibility-maps.html" class="project-link">
                         <div class="project-image">
                             <img src="images/tactile-maps-hero.png" alt="Tactile Accessibility Maps">
@@ -281,6 +298,32 @@
         </main>
     </div>
 
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script>
+        const thumbCanvas = document.getElementById('hydra-thumb');
+        thumbCanvas.width  = thumbCanvas.offsetWidth  || 640;
+        thumbCanvas.height = thumbCanvas.offsetHeight || 360;
+
+        new Hydra({ canvas: thumbCanvas, detectAudio: false, makeGlobal: true });
+
+        var spd = 0.4, kali = 1, px = 20, sat = 2, fb = 0.1, mod = 0.3;
+
+        osc(10, 0.2, 1.5)
+            .color(1.2, 1, 0.8)
+            .rotate(() => time * spd)
+            .modulate(
+                noise(3, 0.2).scale(() => 1 + (Math.sin(time * 0.7) * 0.5 + 0.5) * 3),
+                () => (Math.cos(time * 0.5) * 0.5 + 0.5) * mod
+            )
+            .kaleid(() => kali)
+            .pixelate(
+                () => px + (Math.sin(time * 0.7) * 0.5 + 0.5) * 40,
+                () => px + (Math.sin(time * 0.7) * 0.5 + 0.5) * 80
+            )
+            .posterize(6).contrast(1.8).saturate(() => 2 * Math.max(0, Math.sin(time * 0.3)))
+            .blend(src(o0), () => fb)
+            .out(o0);
+    </script>
     <script>
         // Mouse-reactive gradient tracking for project items
         document.querySelectorAll('.project-item').forEach(item => {
