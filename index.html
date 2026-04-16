@@ -10,6 +10,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .np-thumb {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .np-thumb img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: np-cycle 2.4s linear infinite;
+        }
+        .np-thumb img:nth-child(1) { animation-delay: 0s; }
+        .np-thumb img:nth-child(2) { animation-delay: 0.8s; }
+        .np-thumb img:nth-child(3) { animation-delay: 1.6s; }
+        @keyframes np-cycle {
+            0%      { opacity: 1; }
+            33.3%   { opacity: 1; }
+            33.31%  { opacity: 0; }
+            100%    { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
     <div class="page-wrapper">
@@ -36,7 +61,11 @@
                 <article class="project-item">
                     <a href="neighbourhood-protocol.html" class="project-link">
                         <div class="project-image">
-                            <img src="https://raw.githubusercontent.com/haniflearnscoding/neighbourhood-protocol/main/assets/images/scene3/Scene%203%20%E2%80%93%2051.png" alt="Neighbourhood Protocol">
+                            <div class="np-thumb">
+                                <img src="https://raw.githubusercontent.com/haniflearnscoding/neighbourhood-protocol/main/assets/images/scene3/Scene%203%20%E2%80%93%2051.png" alt="Neighbourhood Protocol">
+                                <img src="https://raw.githubusercontent.com/haniflearnscoding/neighbourhood-protocol/main/assets/images/scene3/Scene%203%20%E2%80%93%2053.png" alt="">
+                                <img src="https://raw.githubusercontent.com/haniflearnscoding/neighbourhood-protocol/main/assets/images/scene3/Scene%203%20%E2%80%93%2055.png" alt="">
+                            </div>
                         </div>
                         <div class="project-info">
                             <h2 class="project-title">Neighbourhood Protocol</h2>
