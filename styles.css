@@ -148,12 +148,10 @@ img {
     background-color: var(--bg-secondary);
 }
 
-/* Projects Grid */
+/* Projects Grid - Masonry Layout */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-    align-items: start;
+    column-count: 4;
+    column-gap: 1.25rem;
 }
 
 .project-item {
@@ -1006,7 +1004,7 @@ img {
 
 @media (max-width: 1024px) {
     .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
+        column-count: 3;
     }
 }
 
@@ -1050,8 +1048,8 @@ img {
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        column-count: 2;
+        column-gap: 1rem;
     }
 
     /* Character Sheet Mobile */
@@ -1159,7 +1157,7 @@ img {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        column-count: 1;
     }
 
     /* Uniform heights on mobile */
