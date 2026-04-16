@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbourhood Protocol - Hanif Hashim</title>
+    <link rel="icon" type="image/png" href="favicon-frame-0.png">
+    <script src="favicon-animation.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/eij1zrm.css">
+    <style>
+
+        /* ── Hero ── */
+        .np-hero {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+        .np-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── Scenes ── */
+        .np-scene-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .np-scene {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 1rem;
+        }
+        .np-scene-number {
+            font-family: 'Westsac', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.4rem;
+        }
+        .np-scene h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .np-scene p {
+            font-size: 0.875rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* ── Iframe embed ── */
+        .experience-embed {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #111;
+        }
+        .experience-embed iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+
+        /* ── Quote ── */
+        .np-quote {
+            border-left: 2px solid #ccc;
+            padding: 1rem 1.75rem;
+            margin: 3rem 0;
+            font-family: 'Westsac', sans-serif;
+            font-style: normal;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* ── Links ── */
+        .np-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .np-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.25rem;
+            border: 1px solid #d0d0d0;
+            color: inherit;
+            text-decoration: none;
+            font-size: 0.875rem;
+            border-radius: 2px;
+            transition: background 0.2s ease;
+        }
+        .np-link:hover {
+            background: #f5f5f5;
+        }
+
+        /* ── Technique callout ── */
+        .np-technique {
+            background: #f7f5f2;
+            border-radius: 4px;
+            padding: 1.5rem 2rem;
+            margin: 3rem 0;
+        }
+        .np-technique-label {
+            font-family: 'Westsac', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+        .np-technique p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;
+        }
+        .np-technique code {
+            font-size: 0.85rem;
+            background: #ece9e3;
+            padding: 0.1em 0.4em;
+            border-radius: 2px;
+            color: #333;
+        }
+
+        @media (max-width: 900px) {
+            .np-scene-grid {
+                grid-template-columns: 1fr;
+            }
+            .experience-embed iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h1 class="site-name"><a href="index.html">Hanif Hashim</a></h1>
+                <p class="site-tagline">Interactive media artist and creative technologist.</p>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+            <footer class="sidebar-footer">
+                <p>&copy; 2026 Abdul Hanif Hashim</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <article class="case-study">
+
+                <!-- Hero -->
+                <div class="np-hero">
+                    <img src="https://raw.githubusercontent.com/haniflearnscoding/neighbourhood-protocol/main/assets/images/scene3/Scene%203%20%E2%80%93%2051.png"
+                         alt="Neighbourhood Protocol — a scene from the experience">
+                </div>
+
+                <!-- Header -->
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h1>Neighbourhood Protocol</h1>
+                        <p class="case-study-tagline">A choice-based narrative about community, surveillance, and mutual aid</p>
+                    </div>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Developer & Interaction Designer</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Illustration</span>
+                            <span class="meta-value">Anna</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Tech</span>
+                            <span class="meta-value">HTML / CSS / JS / GSAP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overview -->
+                <div class="case-study-section">
+                    <h2 class="section-label">Overview</h2>
+                    <p class="section-content-large">Three scenes. Three choices. Each one grounded in documented tactics used by real mutual aid networks.</p>
+                    <p class="section-content">Neighbourhood Protocol is a choice-based narrative experience about the everyday decisions that define community. The experience puts you inside three scenarios — each one quiet, each one weighted — and asks what you would do. It ends with a reminder that none of it is fiction.</p>
+                </div>
+
+                <!-- Collaboration narrative -->
+                <div class="case-study-section">
+                    <h2 class="section-label">Collaboration</h2>
+                    <p class="section-content-large">The illustrations came first. The interface had to catch up.</p>
+                    <p class="section-content">Anna's flat editorial style set the terms for everything else. Each scene arrived as a sequence of still frames — flat fills, a deliberate palette, a visual language that felt closer to print than screen. My job was to figure out how to make a browser feel like it deserved these images.</p>
+                    <p class="section-content">Anna's illustrations weren't designed for screens — that restraint was a design principle, not a limitation. Every UI decision I made — typography weight, spacing, button style — had to stay invisible enough that the illustrations could dominate without competition.</p>
+                    <p class="section-content">The harder problem was that the web is rhizomatic: it branches, loops, forks back on itself. Anna's frames were sequential. Bridging the two meant rethinking how each illustration needed to function — not just as a static image, but as a state in a branching system. Some frames needed to appear, hold, then dissolve based on a choice the user had made several steps earlier.</p>
+                </div>
+
+                <!-- Technique callout -->
+                <div class="np-technique">
+                    <p class="np-technique-label">Design Technique</p>
+                    <p>To keep Anna's flat illustrations from looking like dropped-in PNGs, I leaned heavily on CSS blend modes. Setting images to <code>mix-blend-mode: multiply</code> against tinted backgrounds let the illustrations absorb the page's colour temperature — making them feel embedded rather than placed. The result is that the scenes look like they belong to the browser, not pasted into it.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h2 class="section-label">Building the Engine</h2>
+                    <p class="section-content">Vanilla JavaScript, no frameworks. A scene engine handles branching narrative state, image sequencing, and routing between choices. GSAP drives the transitions — deliberate, unhurried pacing that matches the weight of each decision. Narrative data lives in separate JS modules, keeping story logic clean and extensible.</p>
+                    <p class="section-content">The phone and camera UI components came directly from Anna's designs — she drew the frames, I built the CSS to surround them. Interface and illustration share the same visual DNA rather than one feeling bolted onto the other.</p>
+                    <div class="tech-stack" style="margin-top: 1.25rem;">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GSAP</span>
+                        <span class="tech-tag">ES Modules</span>
+                        <span class="tech-tag">Blend Modes</span>
+                    </div>
+                </div>
+
+                <!-- Scenes -->
+                <div class="case-study-section">
+                    <h2 class="section-label">Scenes</h2>
+                    <div class="np-scene-grid">
+                        <div class="np-scene">
+                            <p class="np-scene-number">Scene 01</p>
+                            <h3>The Lookout</h3>
+                            <p>A truck arrives on the block. You notice before anyone else. Do you ignore it, or warn your neighbours?</p>
+                        </div>
+                        <div class="np-scene">
+                            <p class="np-scene-number">Scene 02</p>
+                            <h3>The Witness</h3>
+                            <p>Something happens at the bus stop. You're the only one who sees it. Do you flee, or do you film?</p>
+                        </div>
+                        <div class="np-scene">
+                            <p class="np-scene-number">Scene 03</p>
+                            <h3>The Groceries</h3>
+                            <p>You find money at the supermarket. It's enough to matter. What do you do with it?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience embed -->
+                <div class="case-study-section">
+                    <h2 class="section-label">The Experience</h2>
+                    <div class="experience-embed">
+                        <iframe src="https://haniflearnscoding.github.io/neighbourhood-protocol/"
+                                title="Neighbourhood Protocol interactive experience"
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                    <p class="image-caption">Best experienced on desktop. Use the buttons to navigate each scene.</p>
+                    <div class="np-links">
+                        <a href="https://haniflearnscoding.github.io/neighbourhood-protocol/" target="_blank" class="np-link">Play in full ↗</a>
+                        <a href="https://github.com/haniflearnscoding/neighbourhood-protocol" target="_blank" class="np-link">View on GitHub ↗</a>
+                    </div>
+                </div>
+
+                <!-- Closing quote -->
+                <blockquote class="np-quote">
+                    "The tactics in this experience are documented. The charges are real. The mutual aid networks exist."
+                </blockquote>
+
+                <a href="index.html" class="back-link">← Back to Projects</a>
+
+            </article>
+        </main>
+    </div>
+</body>
+</html>
