@@ -29,6 +29,20 @@
 
     /* Pixel Font */
     --pixel-font: 'Press Start 2P', cursive;
+
+    /* Font stacks */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Crimson Pro', Georgia, serif;
+
+    /* PICO-8 dark tones used on the About stat bars */
+    --pico-dark-blue: #1D2B53;
+    --pico-dark-gray: #5F574F;
+
+    /* Radius scale */
+    --radius-xs: 2px;
+    --radius-sm: 3px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
 }
 
 * {
@@ -38,7 +52,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-primary);
@@ -84,7 +98,7 @@ img {
 }
 
 .site-name {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -159,7 +173,7 @@ img {
     animation: fadeIn 0.6s ease forwards;
     background-color: var(--bg-primary);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     transition: all 0.3s ease;
     break-inside: avoid;
@@ -185,7 +199,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -339,6 +353,7 @@ img {
     object-fit: cover;
     object-position: center;
     transition: transform 0.4s ease;
+    transform: scale(var(--zoom, 1));
     display: block;
     position: absolute;
     top: 0;
@@ -387,21 +402,16 @@ img {
 }
 
 .project-item:hover .project-image img {
-    transform: scale(1.05);
+    transform: scale(calc(var(--zoom, 1) * 1.05));
 }
 
-/* Special handling for pre-scaled images */
-.project-item:hover .project-image img[style*="scale(2)"] {
-    transform: scale(2.1) !important;
-    transform-origin: center;
-}
 
 .project-info {
     padding: 1rem;
 }
 
 .project-title {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.3rem;
@@ -428,7 +438,7 @@ img {
     color: var(--text-light);
     padding: 0.2rem 0.5rem;
     border: 1px solid var(--border);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     transition: all 0.3s ease;
     font-weight: 400;
 }
@@ -465,8 +475,8 @@ img {
 
 .character-ref-image {
     background: white;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
@@ -509,7 +519,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin: 0 0 0.75rem;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid var(--border);
     padding-bottom: 0.5rem;
     line-height: 1.6;
 }
@@ -558,9 +568,9 @@ img {
 
 .stat-progress {
     height: 16px;
-    background: #1D2B53;
-    border: 2px solid #5F574F;
-    border-radius: 2px;
+    background: var(--pico-dark-blue);
+    border: 2px solid var(--pico-dark-gray);
+    border-radius: var(--radius-xs);
     overflow: hidden;
     position: relative;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -678,7 +688,7 @@ img {
 
 
 .about-content h2 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 600;
     margin: 3rem 0 1.5rem;
@@ -710,7 +720,7 @@ img {
 }
 
 .skill-category h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -751,7 +761,7 @@ img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     object-fit: cover;
     object-position: center 20%;
@@ -799,7 +809,7 @@ img {
 }
 
 .contact-item h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -845,7 +855,7 @@ img {
 }
 
 .project-header h1 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -869,7 +879,7 @@ img {
 }
 
 .project-description h2 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 600;
     margin: 3rem 0 1.5rem;
@@ -890,7 +900,7 @@ img {
 
 .video-container {
     margin: 3rem 0;
-    border-radius: 4px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     background-color: var(--bg-secondary);
     position: relative;
@@ -913,7 +923,7 @@ img {
 
 .project-image-full {
     margin-bottom: 2rem;
-    border-radius: 2px;
+    border-radius: var(--radius-xs);
     overflow: hidden;
 }
 
@@ -1209,7 +1219,7 @@ img {
 }
 
 .case-study-title h1 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -1263,7 +1273,7 @@ img {
 }
 
 .section-content-large {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     line-height: 1.5;
     color: var(--text-primary);
@@ -1283,7 +1293,7 @@ img {
 
 .case-study-image img {
     width: 100%;
-    border-radius: 4px;
+    border-radius: var(--radius-md);
 }
 
 .image-caption {
@@ -1302,7 +1312,7 @@ img {
 }
 
 .feature h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -1350,7 +1360,7 @@ img {
     color: var(--text-primary);
     padding: 0.5rem 1rem;
     background-color: var(--bg-secondary);
-    border-radius: 4px;
+    border-radius: var(--radius-md);
     font-weight: 400;
 }
 
@@ -1362,7 +1372,7 @@ img {
 .case-study-image--full img {
     width: 100%;
     max-height: none;
-    border-radius: 4px;
+    border-radius: var(--radius-md);
 }
 
 @media (max-width: 768px) {
@@ -1393,7 +1403,7 @@ img {
 
 .application-card {
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     background-color: var(--bg-primary);
 }
@@ -1415,7 +1425,7 @@ img {
 }
 
 .application-content h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -1441,7 +1451,7 @@ img {
     color: var(--accent);
     padding: 0.4rem 0.9rem;
     border: 1px solid var(--accent);
-    border-radius: 4px;
+    border-radius: var(--radius-md);
     font-weight: 400;
 }
 
@@ -1983,4 +1993,59 @@ video:focus-visible,
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+
+/* Utilities (moved out of inline styles) */
+.zoom-2x {
+    --zoom: 2;
+}
+
+.zoom-1-5x {
+    --zoom: 1.5;
+}
+
+.project-image.project-image--dark {
+    background: #000;
+}
+
+canvas.hydra-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+img.pixelated {
+    image-rendering: pixelated;
+}
+
+.contact-info-section > h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+h3.use-cases-heading {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+a.text-link {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+video.demo-video {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius-md);
+    background: #000;
+}
+
+.tech-stack.tech-stack--spaced {
+    margin-top: 1.25rem;
 }
