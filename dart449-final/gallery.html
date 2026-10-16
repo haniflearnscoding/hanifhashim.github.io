@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Pixel Ghosts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- CRT Overlay -->
+<div class="crt-overlay"></div>
+<button class="crt-toggle">CRT: OFF</button>
+
+<!-- Navigation -->
+<nav class="site-nav">
+    <div class="nav-brand"><a href="index.html">PIXEL GHOSTS</a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essay.html">Essay</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="interactive.html">Play</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero-sub">
+    <div class="section-label">Curated Collection</div>
+    <h1 class="hero-pixel-title">THE GALLERY</h1>
+    <p class="hero-tagline">Pixel art across eras — from hardware-constrained originals to contemporary reinterpretations.</p>
+</header>
+
+<!-- Gallery Section -->
+<section class="content-section section-dark wide">
+    <div class="inner" style="max-width: var(--wide-width);">
+
+        <!-- Filters -->
+        <div class="gallery-filters fade-in">
+            <button class="filter-btn active" data-filter="all">ALL</button>
+            <button class="filter-btn" data-filter="nes">NES ERA</button>
+            <button class="filter-btn" data-filter="gameboy">GAME BOY</button>
+            <button class="filter-btn" data-filter="snes">SNES / GEN</button>
+            <button class="filter-btn" data-filter="indie">MODERN INDIE</button>
+            <button class="filter-btn" data-filter="pico8">PICO-8</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid stagger-children">
+
+            <!-- NES Era -->
+            <div class="gallery-item" data-category="nes">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #1D2B53, #29ADFF);">
+                    <div class="pixel-grid"></div>
+                    &#127812;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">NES &middot; 1985</span>
+                    <h4>Super Mario Bros.</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nes">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #008751, #00E756);">
+                    <div class="pixel-grid"></div>
+                    &#9876;&#65039;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">NES &middot; 1986</span>
+                    <h4>The Legend of Zelda</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nes">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #FF004D, #FFA300);">
+                    <div class="pixel-grid"></div>
+                    &#128640;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">NES &middot; 1986</span>
+                    <h4>Metroid</h4>
+                </div>
+            </div>
+
+            <!-- Game Boy -->
+            <div class="gallery-item" data-category="gameboy">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #5F574F, #C2C3C7);">
+                    <div class="pixel-grid"></div>
+                    &#127758;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Game Boy &middot; 1989</span>
+                    <h4>Tetris</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="gameboy">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #008751, #5F574F);">
+                    <div class="pixel-grid"></div>
+                    &#128302;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Game Boy &middot; 1996</span>
+                    <h4>Pok&eacute;mon Red/Blue</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="gameboy">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #5F574F, #008751);">
+                    <div class="pixel-grid"></div>
+                    &#127795;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Game Boy &middot; 1993</span>
+                    <h4>Link's Awakening</h4>
+                </div>
+            </div>
+
+            <!-- SNES / Genesis -->
+            <div class="gallery-item" data-category="snes">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #7E2553, #FF77A8);">
+                    <div class="pixel-grid"></div>
+                    &#128171;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">SNES &middot; 1994</span>
+                    <h4>Super Metroid</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="snes">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #1D2B53, #83769C);">
+                    <div class="pixel-grid"></div>
+                    &#9731;&#65039;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">SNES &middot; 1995</span>
+                    <h4>Chrono Trigger</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="snes">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #AB5236, #FFA300);">
+                    <div class="pixel-grid"></div>
+                    &#128058;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Genesis &middot; 1991</span>
+                    <h4>Sonic the Hedgehog</h4>
+                </div>
+            </div>
+
+            <!-- Modern Indie -->
+            <div class="gallery-item" data-category="indie">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #29ADFF, #FF77A8);">
+                    <div class="pixel-grid"></div>
+                    &#127935;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Indie &middot; 2018</span>
+                    <h4>Celeste</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="indie">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #FFA300, #FFEC27);">
+                    <div class="pixel-grid"></div>
+                    &#9876;&#65039;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Indie &middot; 2014</span>
+                    <h4>Shovel Knight</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="indie">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #000000, #FF004D);">
+                    <div class="pixel-grid"></div>
+                    &#10084;&#65039;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Indie &middot; 2015</span>
+                    <h4>Undertale</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="indie">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #7E2553, #29ADFF);">
+                    <div class="pixel-grid"></div>
+                    &#128161;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Indie &middot; 2016</span>
+                    <h4>Hyper Light Drifter</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="indie">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #008751, #FFEC27);">
+                    <div class="pixel-grid"></div>
+                    &#127793;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">Indie &middot; 2016</span>
+                    <h4>Stardew Valley</h4>
+                </div>
+            </div>
+
+            <!-- PICO-8 -->
+            <div class="gallery-item" data-category="pico8">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #1D2B53, #FF004D);">
+                    <div class="pixel-grid"></div>
+                    &#127918;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">PICO-8 &middot; 2015</span>
+                    <h4>Celeste Classic</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="pico8">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #000000, #00E756);">
+                    <div class="pixel-grid"></div>
+                    &#128126;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">PICO-8 &middot; Community</span>
+                    <h4>POOM (Doom Demake)</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="pico8">
+                <div class="gallery-thumb" style="background: linear-gradient(135deg, #7E2553, #FFCCAA);">
+                    <div class="pixel-grid"></div>
+                    &#128059;
+                </div>
+                <div class="gallery-info">
+                    <span class="gallery-tag">PICO-8 &middot; Community</span>
+                    <h4>Just One Boss</h4>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox">
+    <button class="lightbox-close">&#10005; CLOSE</button>
+    <div class="lightbox-content">
+        <div class="lightbox-img"></div>
+        <p class="lightbox-caption"></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <p class="footer-pixel">PIXEL GHOSTS</p>
+    <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essay.html">Essay</a></li>
+        <li><a href="interactive.html">Play</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+    </ul>
+    <p class="footer-copy">DART 449: The Language of the Web &middot; Professor Santo Romano &middot; 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

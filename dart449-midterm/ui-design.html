@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Design — DART 449 Midterm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/midterm.css">
+</head>
+<body>
+
+<div class="page-grid">
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-brand"><a href="index.html">DART 449 Midterm</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Proposal</a></li>
+            <li><a href="ui-design.html" class="active">UI Design</a></li>
+            <li><a href="style-guide.html">Style Guide</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero hero-sm">
+        <h1 class="hero-title">UI Design</h1>
+        <p class="hero-subtitle">Wireframe mockups and interaction plans for the Pixel Ghosts final project.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <h2>Desktop Mockups</h2>
+        <p>Wireframe placeholders for the final project's four primary page layouts. Swap these CSS placeholders for screenshot images as mockups are completed.</p>
+
+        <!-- Desktop Mockups — 2x2 Grid -->
+        <div class="mockup-grid">
+
+            <div class="mockup-placeholder">
+                <div class="mockup-label">Homepage</div>
+                <div class="mockup-desc">Pixel-art hero with parallax starfield, animated sprite navigation, project statement</div>
+                <div class="mockup-dimensions">1440 &times; 900</div>
+            </div>
+
+            <div class="mockup-placeholder">
+                <div class="mockup-label">Critical Essay</div>
+                <div class="mockup-desc">Long-form reading layout, pull quotes, inline pixel-art figures with captions</div>
+                <div class="mockup-dimensions">1440 &times; 900</div>
+            </div>
+
+            <div class="mockup-placeholder">
+                <div class="mockup-label">Gallery</div>
+                <div class="mockup-desc">Masonry grid of pixel art examples, lightbox previews, filterable by era/style</div>
+                <div class="mockup-dimensions">1440 &times; 900</div>
+            </div>
+
+            <div class="mockup-placeholder">
+                <div class="mockup-label">Interactive / PICO-8</div>
+                <div class="mockup-desc">Embedded PICO-8 web player, game selector, design commentary sidebar</div>
+                <div class="mockup-dimensions">1440 &times; 900</div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Mockup -->
+        <h2>Mobile Layout</h2>
+        <p>Responsive mobile view demonstrating single-column reflow, touch-friendly navigation, and adapted PICO-8 player sizing.</p>
+
+        <div class="mobile-mockup-wrapper">
+            <div class="mockup-mobile">
+                <div class="mockup-label">Mobile View</div>
+                <div class="mockup-desc">Responsive single-column layout with hamburger nav</div>
+                <div class="mockup-dimensions">375 &times; 812</div>
+            </div>
+        </div>
+
+        <!-- Interactivity Plan -->
+        <h2>Interactivity Plan</h2>
+        <p>Four key interactions planned for the final project, each reinforcing the retro game aesthetic theme through functional design choices.</p>
+
+        <div class="interaction-grid">
+
+            <div class="interaction-card">
+                <h4>Pixel-Art Hover States</h4>
+                <p>
+                    Navigation links and interactive elements will use CSS-generated dithering patterns on hover, simulating the half-tone blending techniques used on hardware with limited color palettes. The effect will be achieved using repeating linear gradients at 1–2px intervals, creating an authentic low-resolution texture without image assets.
+                </p>
+            </div>
+
+            <div class="interaction-card">
+                <h4>Embedded PICO-8 Web Player</h4>
+                <p>
+                    The interactive page will embed playable PICO-8 cartridges using the official JavaScript web player. Visitors can play directly in the browser using keyboard controls. Each cartridge will be curated to demonstrate a specific aspect of constrained game design — color palette usage, sprite animation, or procedural generation.
+                </p>
+            </div>
+
+            <div class="interaction-card">
+                <h4>Scroll-Triggered Sprite Animations</h4>
+                <p>
+                    As users scroll through the essay and gallery pages, pixel-art sprite characters will animate using CSS sprite sheets triggered by the Intersection Observer API. Characters will "walk" into view, idle, or react to scroll position, adding playful visual reinforcement of the project's subject matter.
+                </p>
+            </div>
+
+            <div class="interaction-card">
+                <h4>CRT Scanline Toggle</h4>
+                <p>
+                    A persistent toggle button will allow visitors to overlay a CRT scanline filter across the entire site. The effect uses a CSS pseudo-element with a repeating linear gradient (1px transparent, 1px semi-transparent black) and a subtle screen curvature via border-radius. This interaction lets users physically experience the retro display aesthetic.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        DART 449 — The Language of the Web — Midterm Proposal — 2026
+    </footer>
+
+</div>
+
+</body>
+</html>

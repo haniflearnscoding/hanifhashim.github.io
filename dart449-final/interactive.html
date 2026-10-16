@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive / PICO-8 — Pixel Ghosts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- CRT Overlay -->
+<div class="crt-overlay"></div>
+<button class="crt-toggle">CRT: OFF</button>
+
+<!-- Navigation -->
+<nav class="site-nav">
+    <div class="nav-brand"><a href="index.html">PIXEL GHOSTS</a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essay.html">Essay</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="interactive.html" class="active">Play</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero-sub">
+    <div class="section-label">Hands-On</div>
+    <h1 class="hero-pixel-title">PLAY PICO-8</h1>
+    <p class="hero-tagline">Experience constrained game design firsthand. Each cartridge demonstrates a different aspect of the 16-color, 128&times;128 pixel world.</p>
+</header>
+
+<!-- Intro -->
+<section class="content-section section-dark">
+    <div class="inner">
+        <div class="prose">
+            <p class="fade-in">
+                PICO-8 is a <strong>fantasy console</strong> — a virtual machine that simulates an imaginary 8-bit system with deliberate constraints: 128&times;128 pixel display, 16 colors, 4-channel sound, and 32KB cartridge size. These limitations aren't bugs — they're the entire point. Below are curated cartridges that each highlight a specific dimension of constrained creative design.
+            </p>
+            <p class="fade-in" style="font-size: 0.85rem; color: var(--text-muted);">
+                Use <strong style="color: var(--p8-white);">arrow keys</strong> to move, <strong style="color: var(--p8-white);">Z</strong> and <strong style="color: var(--p8-white);">X</strong> to act. On mobile, use on-screen controls.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- PICO-8 Embeds -->
+<section class="content-section section-deep">
+    <div class="inner" style="max-width: var(--wide-width);">
+
+        <div class="pico8-grid stagger-children">
+
+            <!-- Cartridge 1: Celeste Classic -->
+            <div class="pico8-card">
+                <div class="pico8-embed" style="background: linear-gradient(135deg, #1D2B53 0%, #000000 100%);">
+                    <div class="play-overlay">
+                        <span class="play-icon">&#9654;</span>
+                        PICO-8 PLAYER<br>
+                        CELESTE CLASSIC
+                    </div>
+                </div>
+                <div class="pico8-info">
+                    <span class="pico8-tag tag-gameplay">GAMEPLAY</span>
+                    <h4>Celeste Classic</h4>
+                    <p>The original PICO-8 prototype by Maddy Thorson and Noel Berry that became the acclaimed full game. Tight platforming in 128&times;128 pixels — proof that constraint breeds mastery.</p>
+                </div>
+            </div>
+
+            <!-- Cartridge 2: POOM -->
+            <div class="pico8-card">
+                <div class="pico8-embed" style="background: linear-gradient(135deg, #000000 0%, #008751 100%);">
+                    <div class="play-overlay">
+                        <span class="play-icon">&#9654;</span>
+                        PICO-8 PLAYER<br>
+                        POOM
+                    </div>
+                </div>
+                <div class="pico8-info">
+                    <span class="pico8-tag tag-procgen">RENDERING</span>
+                    <h4>POOM</h4>
+                    <p>A Doom-style raycaster built entirely within PICO-8's constraints. Demonstrates real-time 3D rendering, sprite scaling, and level design — all in 16 colors and 32KB.</p>
+                </div>
+            </div>
+
+            <!-- Cartridge 3: Dusk Child -->
+            <div class="pico8-card">
+                <div class="pico8-embed" style="background: linear-gradient(135deg, #7E2553 0%, #FF77A8 100%);">
+                    <div class="play-overlay">
+                        <span class="play-icon">&#9654;</span>
+                        PICO-8 PLAYER<br>
+                        DUSK CHILD
+                    </div>
+                </div>
+                <div class="pico8-info">
+                    <span class="pico8-tag tag-palette">PALETTE</span>
+                    <h4>Dusk Child</h4>
+                    <p>A meditative exploration game showcasing palette cycling and dithering techniques. Watch the PICO-8 palette transform through time-of-day transitions using only color index swaps.</p>
+                </div>
+            </div>
+
+            <!-- Cartridge 4: Picotron Demo -->
+            <div class="pico8-card">
+                <div class="pico8-embed" style="background: linear-gradient(135deg, #29ADFF 0%, #1D2B53 100%);">
+                    <div class="play-overlay">
+                        <span class="play-icon">&#9654;</span>
+                        PICO-8 PLAYER<br>
+                        PROC GEN DEMO
+                    </div>
+                </div>
+                <div class="pico8-info">
+                    <span class="pico8-tag tag-animation">PROCEDURAL</span>
+                    <h4>Procedural Landscape</h4>
+                    <p>A demoscene-style procedural terrain generator producing infinite, scrolling pixel landscapes. Demonstrates algorithmic art within extreme memory and palette constraints.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- How PICO-8 Works -->
+<section class="content-section section-dark">
+    <div class="inner">
+        <div class="section-label fade-in">Under the Hood</div>
+        <h2 class="section-title fade-in">The PICO-8 Constraint System</h2>
+
+        <div class="stat-row stagger-children">
+            <div class="stat-card">
+                <div class="stat-number">128&times;128</div>
+                <div class="stat-label">Display</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">16</div>
+                <div class="stat-label">Colors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4 CH</div>
+                <div class="stat-label">Sound</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">32 KB</div>
+                <div class="stat-label">Cart Size</div>
+            </div>
+        </div>
+
+        <div class="prose">
+            <p class="fade-in">
+                PICO-8 cartridges are programmed in a subset of <strong>Lua</strong> and stored as .p8.png files — the cartridge data is literally encoded in the pixels of a 128&times;128 PNG image. This means a PICO-8 game is, physically, a tiny image file. The entire development environment — code editor, sprite editor, map editor, sound editor, and music tracker — runs within the same constrained virtual machine.
+            </p>
+
+            <div class="pull-quote fade-in">
+                <p>A PICO-8 game is, physically, a tiny image file. The cartridge data is encoded in the pixels of a 128&times;128 PNG.</p>
+            </div>
+
+            <p class="fade-in">
+                Below is a minimal PICO-8 program that draws the full 16-color palette to the screen — the foundation of everything you see on this site:
+            </p>
+
+            <div class="type-specimen fade-in">
+                <div class="type-specimen-label">PICO-8 Lua</div>
+                <div class="specimen-mono">
+function _draw()<br>
+&nbsp;&nbsp;cls(0)<br>
+&nbsp;&nbsp;for i=0,15 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rectfill(i*8, 48, i*8+7, 79, i)<br>
+&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;print("pico-8 palette", 24, 88, 7)<br>
+end
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <p class="footer-pixel">PIXEL GHOSTS</p>
+    <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essay.html">Essay</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="style-guide.html">Style Guide</a></li>
+    </ul>
+    <p class="footer-copy">DART 449: The Language of the Web &middot; Professor Santo Romano &middot; 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

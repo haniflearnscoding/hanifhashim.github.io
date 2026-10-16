@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide — DART 449 Midterm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/midterm.css">
+</head>
+<body>
+
+<div class="page-grid">
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-brand"><a href="index.html">DART 449 Midterm</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Proposal</a></li>
+            <li><a href="ui-design.html">UI Design</a></li>
+            <li><a href="style-guide.html" class="active">Style Guide</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero hero-sm">
+        <h1 class="hero-title">Style Guide</h1>
+        <p class="hero-subtitle">Design system documentation for <em>Pixel Ghosts</em> — palette, typography, and visual inspiration.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Color Palette -->
+        <h2>Color Palette: PICO-8 16-Color System</h2>
+        <p>The full PICO-8 palette serves as the project's color foundation. These 16 colors mirror the constraints of the fantasy console and ensure visual cohesion across all pages.</p>
+
+        <div class="swatch-grid">
+            <div class="swatch dark" style="background-color: #000000;">
+                <span class="swatch-name">Black</span>
+                <span class="swatch-hex">#000000</span>
+            </div>
+            <div class="swatch dark" style="background-color: #1D2B53;">
+                <span class="swatch-name">Dark Blue</span>
+                <span class="swatch-hex">#1D2B53</span>
+            </div>
+            <div class="swatch dark" style="background-color: #7E2553;">
+                <span class="swatch-name">Dark Purple</span>
+                <span class="swatch-hex">#7E2553</span>
+            </div>
+            <div class="swatch dark" style="background-color: #008751;">
+                <span class="swatch-name">Dark Green</span>
+                <span class="swatch-hex">#008751</span>
+            </div>
+            <div class="swatch dark" style="background-color: #AB5236;">
+                <span class="swatch-name">Brown</span>
+                <span class="swatch-hex">#AB5236</span>
+            </div>
+            <div class="swatch dark" style="background-color: #5F574F;">
+                <span class="swatch-name">Dark Gray</span>
+                <span class="swatch-hex">#5F574F</span>
+            </div>
+            <div class="swatch light" style="background-color: #C2C3C7;">
+                <span class="swatch-name">Light Gray</span>
+                <span class="swatch-hex">#C2C3C7</span>
+            </div>
+            <div class="swatch light" style="background-color: #FFF1E8;">
+                <span class="swatch-name">White</span>
+                <span class="swatch-hex">#FFF1E8</span>
+            </div>
+            <div class="swatch dark" style="background-color: #FF004D;">
+                <span class="swatch-name">Red</span>
+                <span class="swatch-hex">#FF004D</span>
+            </div>
+            <div class="swatch dark" style="background-color: #FFA300;">
+                <span class="swatch-name">Orange</span>
+                <span class="swatch-hex">#FFA300</span>
+            </div>
+            <div class="swatch light" style="background-color: #FFEC27;">
+                <span class="swatch-name">Yellow</span>
+                <span class="swatch-hex">#FFEC27</span>
+            </div>
+            <div class="swatch light" style="background-color: #00E756;">
+                <span class="swatch-name">Green</span>
+                <span class="swatch-hex">#00E756</span>
+            </div>
+            <div class="swatch light" style="background-color: #29ADFF;">
+                <span class="swatch-name">Blue</span>
+                <span class="swatch-hex">#29ADFF</span>
+            </div>
+            <div class="swatch light" style="background-color: #83769C;">
+                <span class="swatch-name">Indigo</span>
+                <span class="swatch-hex">#83769C</span>
+            </div>
+            <div class="swatch light" style="background-color: #FF77A8;">
+                <span class="swatch-name">Pink</span>
+                <span class="swatch-hex">#FF77A8</span>
+            </div>
+            <div class="swatch light" style="background-color: #FFCCAA;">
+                <span class="swatch-name">Peach</span>
+                <span class="swatch-hex">#FFCCAA</span>
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <h2>Typography</h2>
+        <p>Three typeface families serve distinct roles, balancing retro character with modern readability.</p>
+
+        <div class="type-specimen">
+            <div class="type-specimen-label">Headlines — Press Start 2P</div>
+            <p class="specimen-pixel">PIXEL GHOSTS</p>
+            <p class="specimen-pixel" style="font-size: 0.85rem;">The Revival of Retro Game Aesthetics</p>
+            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.75rem; margin-bottom: 0;">
+                Used for display headings, UI labels, and decorative text. Evokes the bitmap fonts of 8-bit consoles. Best at larger sizes; avoid for body copy.
+            </p>
+        </div>
+
+        <div class="type-specimen">
+            <div class="type-specimen-label">Body — Source Sans 3</div>
+            <p class="specimen-body">
+                In an era defined by photorealistic rendering engines and 4K displays, a curious counter-movement has emerged: the deliberate embrace of low-resolution pixel art. This is not merely nostalgia — it represents a conscious design language that privileges constraint, legibility, and emotional directness over technical spectacle.
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0;">
+                Primary reading typeface. Clean, humanist sans-serif with excellent screen rendering. Weights 300 (light), 400 (regular), 600 (semibold), 700 (bold).
+            </p>
+        </div>
+
+        <div class="type-specimen">
+            <div class="type-specimen-label">Code / Technical — Source Code Pro</div>
+            <div class="specimen-mono">
+poke(0x5f2c, 3)  -- enable 64x64 mode<br>
+cls(1)<br>
+for i=0,15 do<br>
+&nbsp;&nbsp;rectfill(i*8, 0, i*8+7, 127, i)<br>
+end
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.75rem; margin-bottom: 0;">
+                Used for code snippets, PICO-8 Lua examples, and technical annotations. Monospaced for alignment in code blocks.
+            </p>
+        </div>
+
+        <!-- Image Style Direction -->
+        <h2>Image Style Direction</h2>
+        <p>Visual assets for the final project will follow three primary categories.</p>
+
+        <div class="image-direction-grid">
+            <div class="image-direction-card">
+                <span class="direction-icon">&#9642;&#9642;&#9642;</span>
+                <h4>Pixel Art Samples</h4>
+                <p>Original and curated sprite work, character sheets, tile sets rendered at native resolution with nearest-neighbor scaling</p>
+            </div>
+            <div class="image-direction-card">
+                <span class="direction-icon">&#9633;&#9633;&#9633;</span>
+                <h4>UI Screenshots</h4>
+                <p>Captured screens from PICO-8 cartridges, indie games, and the project site itself for documentation</p>
+            </div>
+            <div class="image-direction-card">
+                <span class="direction-icon">&#9655;&#9655;&#9655;</span>
+                <h4>Diagrams</h4>
+                <p>Flowcharts, color theory breakdowns, and comparative visual analyses using the PICO-8 palette</p>
+            </div>
+        </div>
+
+        <!-- Inspirational Websites -->
+        <h2>Inspirational Websites</h2>
+
+        <h3>Content Inspiration</h3>
+        <p>Sites that demonstrate compelling approaches to presenting digital culture, net art, and game history.</p>
+
+        <div class="inspiration-grid">
+            <div class="inspiration-card" data-category="content">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Content</span>
+                    <h4><a href="https://www.cameronsworld.net/" target="_blank" rel="noopener">Cameron's World</a></h4>
+                    <p>A web collage of text and images excavated from the GeoCities archive, celebrating the raw creativity of early personal web pages.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="content">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Content</span>
+                    <h4><a href="https://anthology.rhizome.org/" target="_blank" rel="noopener">Rhizome Net Art Anthology</a></h4>
+                    <p>A curated archive of 100 net art works spanning 1984–2016, presenting digital art with critical context and preservation.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Design Inspiration</h3>
+        <p>Sites whose visual design, layout, or aesthetic approach inform the project's look and feel.</p>
+
+        <div class="inspiration-grid">
+            <div class="inspiration-card" data-category="design">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Design</span>
+                    <h4><a href="https://www.lexaloffle.com/pico-8.php" target="_blank" rel="noopener">PICO-8 Official Site</a></h4>
+                    <p>The fantasy console's homepage, using its own 16-color palette and pixel aesthetic for documentation and community.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="design">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Design</span>
+                    <h4><a href="https://www.celestegame.com/" target="_blank" rel="noopener">Celeste</a></h4>
+                    <p>The official site for the acclaimed platformer, blending pixel art with modern web design in a clean, immersive presentation.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="design">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Design</span>
+                    <h4><a href="https://100r.co/" target="_blank" rel="noopener">Hundred Rabbits (100r.co)</a></h4>
+                    <p>A minimal, hand-crafted site by the artist duo, emphasizing constraint-driven design and custom pixel-art tooling.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Data Visualization &amp; Visual Storytelling</h3>
+        <p>Sites that exemplify the Information is Beautiful approach — bold color, data-driven design, and scroll-based visual storytelling.</p>
+
+        <div class="inspiration-grid">
+            <div class="inspiration-card" data-category="data-viz">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Data Viz</span>
+                    <h4><a href="https://informationisbeautiful.net/" target="_blank" rel="noopener">Information is Beautiful</a></h4>
+                    <p>David McCandless's data visualization studio — the gold standard for turning complex data into beautiful, engaging visual narratives.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="data-viz">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Data Viz</span>
+                    <h4><a href="https://everylastdrop.co.uk/" target="_blank" rel="noopener">Every Last Drop</a></h4>
+                    <p>A scroll-driven interactive experience visualizing daily water usage, using parallax and illustration to make data tangible.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="data-viz">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Data Viz</span>
+                    <h4><a href="https://slaveryfootprint.org/" target="_blank" rel="noopener">Slavery Footprint</a></h4>
+                    <p>An interactive questionnaire that reveals the hidden human cost of consumer goods through bold visuals and data storytelling.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="data-viz">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Data Viz</span>
+                    <h4><a href="https://thanksinadvance.com/" target="_blank" rel="noopener">Thanks in Advance</a></h4>
+                    <p>A visually rich, design-forward site combining bold typography, vivid color, and interactive elements for compelling storytelling.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Interaction Inspiration</h3>
+        <p>Sites that demonstrate inventive interaction patterns relevant to the project's playful, exploratory goals.</p>
+
+        <div class="inspiration-grid">
+            <div class="inspiration-card" data-category="interaction">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Interaction</span>
+                    <h4><a href="https://poolsuite.net/" target="_blank" rel="noopener">Poolsuite</a></h4>
+                    <p>A retro-styled web experience with audio integration, OS-simulation interface, and immersive nostalgic atmosphere.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="interaction">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Interaction</span>
+                    <h4><a href="https://neal.fun/" target="_blank" rel="noopener">Neal.fun</a></h4>
+                    <p>A collection of interactive web experiments demonstrating creative data visualization and playful user engagement.</p>
+                </div>
+            </div>
+            <div class="inspiration-card" data-category="interaction">
+                <div class="inspiration-thumb">Screenshot placeholder</div>
+                <div class="inspiration-info">
+                    <span class="inspiration-tag">Interaction</span>
+                    <h4><a href="https://www.pico-8-edu.com/" target="_blank" rel="noopener">PICO-8 Education</a></h4>
+                    <p>An educational resource for learning PICO-8 development, featuring embedded interactive examples and step-by-step tutorials.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        DART 449 — The Language of the Web — Midterm Proposal — 2026
+    </footer>
+
+</div>
+
+</body>
+</html>

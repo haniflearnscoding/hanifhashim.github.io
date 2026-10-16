@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide — Pixel Ghosts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- CRT Overlay -->
+<div class="crt-overlay"></div>
+<button class="crt-toggle">CRT: OFF</button>
+
+<!-- Navigation -->
+<nav class="site-nav">
+    <div class="nav-brand"><a href="index.html">PIXEL GHOSTS</a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essay.html">Essay</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="interactive.html">Play</a></li>
+        <li><a href="style-guide.html" class="active">Style Guide</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero-sub">
+    <div class="section-label">Design System</div>
+    <h1 class="hero-pixel-title">STYLE GUIDE</h1>
+    <p class="hero-tagline">Every design decision documented. Palette, typography, components, and the CSS techniques behind the retro aesthetic.</p>
+</header>
+
+<!-- Color Palette -->
+<section class="content-section section-dark">
+    <div class="inner">
+        <div class="section-label fade-in">Foundation</div>
+        <h2 class="section-title fade-in">PICO-8 16-Color Palette</h2>
+        <div class="prose">
+            <p class="fade-in">The entire site is built on these 16 colors — the same palette used by the PICO-8 fantasy console. This constraint ensures visual cohesion across all pages and mirrors the project's subject matter at the level of craft.</p>
+        </div>
+
+        <div class="swatch-grid fade-in">
+            <div class="swatch dark" style="background-color: #000000;">
+                <span class="swatch-name">Black</span>
+                <span class="swatch-hex">#000000</span>
+            </div>
+            <div class="swatch dark" style="background-color: #1D2B53;">
+                <span class="swatch-name">Dark Blue</span>
+                <span class="swatch-hex">#1D2B53</span>
+            </div>
+            <div class="swatch dark" style="background-color: #7E2553;">
+                <span class="swatch-name">Dark Purple</span>
+                <span class="swatch-hex">#7E2553</span>
+            </div>
+            <div class="swatch dark" style="background-color: #008751;">
+                <span class="swatch-name">Dark Green</span>
+                <span class="swatch-hex">#008751</span>
+            </div>
+            <div class="swatch dark" style="background-color: #AB5236;">
+                <span class="swatch-name">Brown</span>
+                <span class="swatch-hex">#AB5236</span>
+            </div>
+            <div class="swatch dark" style="background-color: #5F574F;">
+                <span class="swatch-name">Dark Gray</span>
+                <span class="swatch-hex">#5F574F</span>
+            </div>
+            <div class="swatch light" style="background-color: #C2C3C7;">
+                <span class="swatch-name">Light Gray</span>
+                <span class="swatch-hex">#C2C3C7</span>
+            </div>
+            <div class="swatch light" style="background-color: #FFF1E8;">
+                <span class="swatch-name">White</span>
+                <span class="swatch-hex">#FFF1E8</span>
+            </div>
+            <div class="swatch dark" style="background-color: #FF004D;">
+                <span class="swatch-name">Red</span>
+                <span class="swatch-hex">#FF004D</span>
+            </div>
+            <div class="swatch dark" style="background-color: #FFA300;">
+                <span class="swatch-name">Orange</span>
+                <span class="swatch-hex">#FFA300</span>
+            </div>
+            <div class="swatch light" style="background-color: #FFEC27;">
+                <span class="swatch-name">Yellow</span>
+                <span class="swatch-hex">#FFEC27</span>
+            </div>
+            <div class="swatch light" style="background-color: #00E756;">
+                <span class="swatch-name">Green</span>
+                <span class="swatch-hex">#00E756</span>
+            </div>
+            <div class="swatch light" style="background-color: #29ADFF;">
+                <span class="swatch-name">Blue</span>
+                <span class="swatch-hex">#29ADFF</span>
+            </div>
+            <div class="swatch light" style="background-color: #83769C;">
+                <span class="swatch-name">Indigo</span>
+                <span class="swatch-hex">#83769C</span>
+            </div>
+            <div class="swatch light" style="background-color: #FF77A8;">
+                <span class="swatch-name">Pink</span>
+                <span class="swatch-hex">#FF77A8</span>
+            </div>
+            <div class="swatch light" style="background-color: #FFCCAA;">
+                <span class="swatch-name">Peach</span>
+                <span class="swatch-hex">#FFCCAA</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Typography -->
+<section class="content-section section-deep">
+    <div class="inner">
+        <div class="section-label fade-in">Type System</div>
+        <h2 class="section-title fade-in">Typography</h2>
+        <div class="prose">
+            <p class="fade-in">Three typeface families serve distinct roles, balancing retro character with modern readability.</p>
+        </div>
+
+        <div class="type-specimen fade-in">
+            <div class="type-specimen-label">Display — Press Start 2P</div>
+            <p class="specimen-pixel">PIXEL GHOSTS</p>
+            <p class="specimen-pixel" style="font-size: 0.85rem;">The Revival of Retro Game Aesthetics</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                Used for hero titles, section labels, UI chrome, and the CRT toggle. Evokes bitmap fonts of 8-bit consoles. Sized large for legibility — never used for body copy.
+            </p>
+        </div>
+
+        <div class="type-specimen fade-in">
+            <div class="type-specimen-label">Body — Source Sans 3</div>
+            <p class="specimen-body">
+                In an era defined by photorealistic rendering engines and 4K displays, a curious counter-movement has emerged: the deliberate embrace of low-resolution pixel art. This is not merely nostalgia — it represents a conscious design language that privileges constraint, legibility, and emotional directness over technical spectacle.
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+                Primary reading typeface. Clean, humanist sans-serif with excellent screen rendering. Weights 300 (light), 400 (regular), 600 (semibold), 700 (bold).
+            </p>
+        </div>
+
+        <div class="type-specimen fade-in">
+            <div class="type-specimen-label">Code — Source Code Pro</div>
+            <div class="specimen-mono">
+poke(0x5f2c, 3)  -- enable 64x64 mode<br>
+cls(1)<br>
+for i=0,15 do<br>
+&nbsp;&nbsp;rectfill(i*8, 0, i*8+7, 127, i)<br>
+end
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                Used for PICO-8 Lua snippets, technical annotations, and dimension labels. Green-on-black terminal styling reinforces the retro computing aesthetic.
+            </p>
+        </div>
+
+        <div class="type-specimen fade-in">
+            <div class="type-specimen-label">Headings — Libre Baskerville</div>
+            <p style="font-family: var(--heading-font); font-size: 1.5rem; color: var(--p8-white); line-height: 1.5; margin-bottom: 0.5rem;">
+                The Pixel Endures
+            </p>
+            <p style="font-family: var(--heading-font); font-size: 1.1rem; font-style: italic; color: var(--p8-peach); line-height: 1.6; margin-bottom: 0.5rem;">
+                "A handful of pixels could convey a character's emotion, a tile set could suggest an entire world."
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+                Section headings and pull quotes. Elegant serif provides contrast against the pixel font and sans-serif body, grounding the visual essay in typographic tradition.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Components -->
+<section class="content-section section-dark">
+    <div class="inner">
+        <div class="section-label fade-in">Components</div>
+        <h2 class="section-title fade-in">UI Components</h2>
+
+        <h3 style="font-family: var(--heading-font); color: var(--p8-peach); margin-top: 2rem; margin-bottom: 1rem;" class="fade-in">Stat Cards</h3>
+        <div class="stat-row stagger-children">
+            <div class="stat-card">
+                <div class="stat-number">54</div>
+                <div class="stat-label">NES Colors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">128</div>
+                <div class="stat-label">Pixels Wide</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">16</div>
+                <div class="stat-label">PICO-8 Colors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">32KB</div>
+                <div class="stat-label">Cart Size</div>
+            </div>
+        </div>
+
+        <h3 style="font-family: var(--heading-font); color: var(--p8-peach); margin-top: 3rem; margin-bottom: 1rem;" class="fade-in">Pull Quote</h3>
+        <div class="pull-quote fade-in">
+            <p>The pixel endures not because artists lack the tools for higher fidelity, but because the pixel means something.</p>
+            <span class="source">— from the Pixel Ghosts essay</span>
+        </div>
+
+        <h3 style="font-family: var(--heading-font); color: var(--p8-peach); margin-top: 3rem; margin-bottom: 1rem;" class="fade-in">Buttons</h3>
+        <div class="hero-cta-row fade-in" style="justify-content: flex-start;">
+            <a href="#" class="btn btn-primary" onclick="return false;">PRIMARY</a>
+            <a href="#" class="btn btn-ghost" onclick="return false;">GHOST</a>
+        </div>
+
+        <h3 style="font-family: var(--heading-font); color: var(--p8-peach); margin-top: 3rem; margin-bottom: 1rem;" class="fade-in">Pixel Divider</h3>
+        <div class="pixel-divider fade-in">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+</section>
+
+<!-- CSS Techniques -->
+<section class="content-section section-deep">
+    <div class="inner">
+        <div class="section-label fade-in">Techniques</div>
+        <h2 class="section-title fade-in">CSS Techniques</h2>
+
+        <div class="prose">
+            <h3 class="fade-in">CRT Scanline Overlay</h3>
+            <p class="fade-in">
+                The CRT toggle (bottom-right corner) activates a full-screen overlay using a <strong>repeating linear gradient</strong> — alternating 1px transparent and 1px semi-transparent black lines. A radial gradient adds subtle vignetting at the edges, simulating the curvature of a CRT display. The effect is purely CSS with a JavaScript class toggle. Try it now!
+            </p>
+
+            <div class="type-specimen fade-in">
+                <div class="type-specimen-label">CSS</div>
+                <div class="specimen-mono">
+.crt-overlay {<br>
+&nbsp;&nbsp;background: repeating-linear-gradient(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0deg,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent 1px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rgba(0, 0, 0, 0.15) 1px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rgba(0, 0, 0, 0.15) 2px<br>
+&nbsp;&nbsp;);<br>
+}
+                </div>
+            </div>
+
+            <h3 class="fade-in">Pixel Dithering Hover Effect</h3>
+            <p class="fade-in">
+                Navigation links use a <strong>dithered underline</strong> on hover — a repeating linear gradient with 2px alternating color/transparent blocks. This simulates the half-tone patterns used on hardware with limited color palettes to create the illusion of additional colors.
+            </p>
+
+            <div class="type-specimen fade-in">
+                <div class="type-specimen-label">CSS</div>
+                <div class="specimen-mono">
+.nav-links a::before {<br>
+&nbsp;&nbsp;background: repeating-linear-gradient(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;90deg,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var(--p8-red) 0px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var(--p8-red) 2px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent 2px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent 4px<br>
+&nbsp;&nbsp;);<br>
+}
+                </div>
+            </div>
+
+            <h3 class="fade-in">Parallax Starfield</h3>
+            <p class="fade-in">
+                The homepage hero features a three-layer parallax starfield rendered with <strong>HTML5 Canvas</strong>. Stars are drawn as 1–3px rectangles (pixelated, not circles) using PICO-8 palette colors. Each layer scrolls at a different speed on scroll via <code style="color: var(--p8-green);">requestAnimationFrame</code>, creating a depth effect. A deterministic PRNG ensures consistent star placement across reloads.
+            </p>
+
+            <h3 class="fade-in">Scroll-Triggered Animations</h3>
+            <p class="fade-in">
+                All fade-in and slide-in animations use the <strong>Intersection Observer API</strong> — no scroll event listeners polling on every frame. Elements receive a <code style="color: var(--p8-green);">.visible</code> class when they enter the viewport, triggering CSS transitions. Staggered children use <code style="color: var(--p8-green);">transition-delay</code> for cascading reveals.
+            </p>
+
+            <h3 class="fade-in">image-rendering: pixelated</h3>
+            <p class="fade-in">
+                All <code style="color: var(--p8-green);">&lt;img&gt;</code> elements use <code style="color: var(--p8-green);">image-rendering: pixelated</code> to ensure pixel art scales with nearest-neighbor interpolation rather than bilinear smoothing. This preserves the crisp, blocky edges that define the aesthetic.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Accessibility & Performance -->
+<section class="content-section section-dark">
+    <div class="inner">
+        <div class="section-label fade-in">Standards</div>
+        <h2 class="section-title fade-in">Accessibility &amp; Performance</h2>
+        <div class="prose">
+            <p class="fade-in">
+                <strong>Semantic HTML5:</strong> All pages use proper heading hierarchy, landmark elements (<code style="color: var(--p8-green);">&lt;nav&gt;</code>, <code style="color: var(--p8-green);">&lt;main&gt;</code>, <code style="color: var(--p8-green);">&lt;footer&gt;</code>), and descriptive alt text for images.
+            </p>
+            <p class="fade-in">
+                <strong>Zero dependencies:</strong> No frameworks, no build tools, no npm. The entire site is vanilla HTML, CSS, and JavaScript — self-contained and instantly deployable.
+            </p>
+            <p class="fade-in">
+                <strong>Responsive:</strong> Tested at 1440px, 768px, and 375px breakpoints. Flexbox and CSS Grid handle layout adaptation. Navigation, stat cards, and gallery grids reflow gracefully.
+            </p>
+            <p class="fade-in">
+                <strong>Performance:</strong> CRT overlay and parallax use <code style="color: var(--p8-green);">requestAnimationFrame</code> and <code style="color: var(--p8-green);">will-change</code> for GPU-accelerated compositing. Intersection Observer replaces scroll listeners for animation triggers.
+            </p>
+            <p class="fade-in">
+                <strong>External links:</strong> All outbound links use <code style="color: var(--p8-green);">target="_blank" rel="noopener"</code>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <p class="footer-pixel">PIXEL GHOSTS</p>
+    <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essay.html">Essay</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="interactive.html">Play</a></li>
+    </ul>
+    <p class="footer-copy">DART 449: The Language of the Web &middot; Professor Santo Romano &middot; 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
