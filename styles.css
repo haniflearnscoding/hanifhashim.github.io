@@ -1890,47 +1890,6 @@ video:focus-visible,
     outline-offset: 3px;
 }
 
-/* Reduced motion: honour the OS setting */
-@media (prefers-reduced-motion: reduce) {
-    .project-item,
-    .portfolio-item {
-        opacity: 1;
-        animation: none;
-    }
-
-    .project-item:hover {
-        transform: none;
-    }
-
-    .stat-fill::before,
-    .stat-fill.complete {
-        animation: none;
-    }
-
-    /* Index: show the first thumbnail instead of cycling through three */
-    .np-thumb img:nth-child(n) {
-        animation: none;
-        opacity: 0;
-    }
-
-    .np-thumb img:first-child {
-        opacity: 1;
-    }
-
-    /* About: freeze the decorative game scene at its first frame */
-    .game-scene,
-    .game-scene * {
-        animation-play-state: paused !important;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
 
 /* Utilities (moved out of inline styles) */
 .zoom-2x {
