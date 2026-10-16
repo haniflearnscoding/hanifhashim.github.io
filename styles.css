@@ -501,14 +501,14 @@ img {
     background: white;
 }
 
-.info-box h3 {
+.about-content .info-box h2 {
     font-family: var(--pixel-font);
     font-size: 0.65rem;
     font-weight: 400;
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.75rem;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 0.5rem;
     line-height: 1.6;
@@ -655,7 +655,7 @@ img {
 
 .stat-items {
     font-family: var(--pixel-font);
-    font-size: 0.45rem;
+    font-size: 0.625rem;
     color: var(--text-light);
     margin-top: 0.4rem;
     line-height: 1.5;
@@ -670,7 +670,7 @@ img {
 
 .trait-item {
     font-family: var(--pixel-font);
-    font-size: 0.5rem;
+    font-size: 0.625rem;
     color: var(--text-secondary);
     padding: 0.5rem 0;
     line-height: 1.6;
@@ -1062,7 +1062,7 @@ img {
     }
 
     /* Slightly larger pixel fonts on mobile for readability */
-    .info-box h3 {
+    .about-content .info-box h2 {
         font-size: 0.7rem;
     }
 
@@ -1075,11 +1075,11 @@ img {
     }
 
     .stat-items {
-        font-size: 0.5rem;
+        font-size: 0.6875rem;
     }
 
     .trait-item {
-        font-size: 0.55rem;
+        font-size: 0.6875rem;
     }
 
     /* Scale down heights on tablet */
@@ -1932,4 +1932,55 @@ img {
     left: 3%;
     top: -51.6%;
     display: block;
+}
+
+
+/* Keyboard focus */
+a:focus-visible,
+button:focus-visible,
+video:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Reduced motion: honour the OS setting */
+@media (prefers-reduced-motion: reduce) {
+    .project-item,
+    .portfolio-item {
+        opacity: 1;
+        animation: none;
+    }
+
+    .project-item:hover {
+        transform: none;
+    }
+
+    .stat-fill::before,
+    .stat-fill.complete {
+        animation: none;
+    }
+
+    /* Index: show the first thumbnail instead of cycling through three */
+    .np-thumb img:nth-child(n) {
+        animation: none;
+        opacity: 0;
+    }
+
+    .np-thumb img:first-child {
+        opacity: 1;
+    }
+
+    /* About: freeze the decorative game scene at its first frame */
+    .game-scene,
+    .game-scene * {
+        animation-play-state: paused !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
