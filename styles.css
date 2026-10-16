@@ -43,6 +43,10 @@
     --radius-sm: 3px;
     --radius-md: 4px;
     --radius-lg: 8px;
+
+    /* Project card hover theme */
+    --hover-color: var(--brand-orange);
+    --hover-tint-strength: 15%;
 }
 
 * {
@@ -210,86 +214,18 @@ img {
     opacity: 1;
 }
 
-/* PICO-8 Colored Gradients - Cycling through palette */
-.project-item:nth-child(8n+1)::before {
+/* Card hover theme: one color for every card.
+   Retheme by changing --hover-color in :root. Optional per-card or per-section
+   overrides: --hover-tint (glow color, defaults to --hover-color) and
+   --hover-tint-strength. Options are documented in the Figma Components page. */
+.project-item::before {
     background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 163, 0, 0.15),
+            color-mix(in srgb, var(--hover-tint, var(--hover-color)) var(--hover-tint-strength), transparent),
             transparent 40%);
 }
 
-.project-item:nth-child(8n+2)::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(41, 173, 255, 0.15),
-            transparent 40%);
-}
-
-.project-item:nth-child(8n+3)::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(0, 231, 86, 0.15),
-            transparent 40%);
-}
-
-.project-item:nth-child(8n+4)::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 119, 168, 0.15),
-            transparent 40%);
-}
-
-.project-item:nth-child(8n+5)::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 0, 77, 0.15),
-            transparent 40%);
-}
-
-.project-item:nth-child(8n+6)::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 236, 39, 0.15),
-            transparent 40%);
-}
-
-.project-item:nth-child(8n+7)::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(126, 37, 83, 0.15),
-            transparent 40%);
-}
-
-.project-item:nth-child(8n+8)::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 204, 170, 0.15),
-            transparent 40%);
-}
-
-/* Colored border on hover */
-.project-item:nth-child(8n+1):hover {
-    border-color: var(--pico-orange);
-}
-
-.project-item:nth-child(8n+2):hover {
-    border-color: var(--pico-blue);
-}
-
-.project-item:nth-child(8n+3):hover {
-    border-color: var(--pico-green);
-}
-
-.project-item:nth-child(8n+4):hover {
-    border-color: var(--pico-pink);
-}
-
-.project-item:nth-child(8n+5):hover {
-    border-color: var(--pico-red);
-}
-
-.project-item:nth-child(8n+6):hover {
-    border-color: var(--pico-yellow);
-}
-
-.project-item:nth-child(8n+7):hover {
-    border-color: var(--pico-purple);
-}
-
-.project-item:nth-child(8n+8):hover {
-    border-color: var(--pico-peach);
+.project-item:hover {
+    border-color: var(--hover-color);
 }
 
 .project-item:nth-child(1) {
