@@ -1915,3 +1915,21 @@ img {
     margin-top: -1rem;
     margin-bottom: 2rem;
 }
+
+/* Homepage card cropped to the Wealthsimple x belairdirect logo animation.
+   Extra specificity + !important beat the mobile min-height overrides above. */
+.projects-grid .project-item .project-image.project-image--logo-strip {
+    min-height: 0 !important;
+    aspect-ratio: 3 / 1;
+    background-color: #FAF0E6;
+}
+
+.project-image--logo-strip video {
+    position: absolute;
+    width: 240%;
+    max-width: none;
+    height: auto;
+    left: 3%;
+    top: -51.6%;
+    display: block;
+}
