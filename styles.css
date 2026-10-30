@@ -8,7 +8,8 @@
     --accent: #256fba;
     /* Darkened from #3498db for AA compliance (4.6:1) */
     --border: #e0e0e0;
-    --sidebar-width: 320px;
+    --sidebar-width: 200px;
+    --content-width: 1100px;
 
     /* Studio Hanif Brand Colors - from favicon */
     --brand-orange: #E07B39;
@@ -86,7 +87,6 @@ img {
 .sidebar {
     width: var(--sidebar-width);
     background-color: var(--bg-secondary);
-    border-right: 1px solid var(--border);
     position: fixed;
     height: 100vh;
     left: 0;
@@ -98,14 +98,15 @@ img {
 }
 
 .sidebar-content {
-    padding: 3rem 2rem;
+    padding: 3rem 1.5rem;
 }
 
 .site-name {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 7rem;
+    opacity: 0.5;
     line-height: 1.2;
 }
 
@@ -118,25 +119,18 @@ img {
     color: var(--accent);
 }
 
-.site-tagline {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
-    line-height: 1.5;
-    font-weight: 300;
-}
 
 /* Navigation */
 .main-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0;
 }
 
 .nav-link {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    padding: 0.5rem 0;
+    padding: 0.15rem 0;
     transition: color 0.3s ease;
     font-weight: 400;
 }
@@ -146,24 +140,56 @@ img {
     color: var(--text-primary);
 }
 
-/* Sidebar Footer */
-.sidebar-footer {
-    padding: 2rem;
-    border-top: 1px solid var(--border);
-}
-
-.sidebar-footer p {
-    font-size: 0.85rem;
-    color: var(--text-light);
-}
 
 /* Main Content */
 .main-content {
     margin-left: var(--sidebar-width);
     flex: 1;
     padding: 3rem 4rem;
-    max-width: 1400px;
     background-color: var(--bg-secondary);
+}
+
+/* Center each page's content in the space beside the sidebar */
+.main-content > * {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Work page headline */
+.intro-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.875rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-top: clamp(4rem, 25vh, 16rem);
+    margin-bottom: 1rem;
+    text-wrap: balance;
+}
+
+@media (max-width: 1024px) {
+    .intro-headline {
+        margin-top: 3rem;
+    }
+}
+
+.intro-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 3.5rem;
+}
+
+.intro-headline a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+.intro-headline a:hover {
+    color: var(--accent);
 }
 
 /* Projects Grid - Masonry Layout */
@@ -414,7 +440,7 @@ img {
 }
 
 /* Minimal grid variant: media + title only, no card chrome, square corners.
-   Remove the projects-grid--minimal class in index.html to restore cards. */
+   Used on Work and Fun; remove the class from a grid to restore cards. */
 .projects-grid--minimal .project-item {
     background-color: transparent;
     border: none;
@@ -446,6 +472,12 @@ img {
 .projects-grid--minimal .project-subtitle,
 .projects-grid--minimal .project-tags {
     display: none;
+}
+
+@media (max-width: 768px) {
+    .projects-grid.projects-grid--work {
+        column-count: 1;
+    }
 }
 
 /* About Page */
@@ -847,7 +879,7 @@ img {
 
 /* Project Detail Page */
 .project-detail {
-    max-width: 900px;
+    max-width: var(--content-width);
 }
 
 .project-header {
@@ -998,8 +1030,6 @@ img {
         position: relative;
         width: 100%;
         height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
     }
 
     .main-content {
@@ -1009,6 +1039,21 @@ img {
 
     .page-wrapper {
         flex-direction: column;
+    }
+
+    /* Stacked sidebar becomes a compact header */
+    .sidebar-content {
+        padding: 2rem;
+    }
+
+    .site-name {
+        margin-bottom: 1rem;
+    }
+
+    .main-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
     }
 }
 
@@ -1189,12 +1234,12 @@ img {
 
 /* Case Study Layout */
 .case-study {
-    max-width: 900px;
+    max-width: var(--content-width);
 }
 
 .case-study-hero {
-    margin: -3rem -4rem 4rem;
-    width: calc(100% + 8rem);
+    margin: -3rem 0 4rem;
+    width: 100%;
     max-height: 500px;
     overflow: hidden;
     background-color: var(--bg-secondary);
@@ -1359,9 +1404,9 @@ img {
     font-weight: 400;
 }
 
-/* Wide image: breaks out of the 900px case-study max-width but stays within the container's padding */
+/* Wide image: spans the full content width */
 .case-study-image--full {
-    width: calc(100vw - var(--sidebar-width) - 8rem);
+    width: 100%;
 }
 
 .case-study-image--full img {
@@ -1938,6 +1983,21 @@ img {
     display: block;
 }
 
+
+/* Homepage card sized by its video's own aspect ratio.
+   Extra specificity + !important beat the nth-child and mobile min-heights. */
+.projects-grid .project-item .project-image.project-image--video {
+    min-height: 0 !important;
+    width: 65%;
+    background-color: transparent;
+}
+
+.project-image--video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: brightness(0.9);
+}
 
 /* Keyboard focus */
 a:focus-visible,
