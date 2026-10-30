@@ -168,8 +168,8 @@ img {
 
 /* Projects Grid - Masonry Layout */
 .projects-grid {
-    column-count: 4;
-    column-gap: 1.25rem;
+    column-count: 2;
+    column-gap: 2rem;
 }
 
 .project-item {
@@ -181,7 +181,7 @@ img {
     overflow: hidden;
     transition: all 0.3s ease;
     break-inside: avoid;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
     display: inline-block;
     width: 100%;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
@@ -382,6 +382,70 @@ img {
 .tag:hover {
     background-color: var(--bg-secondary);
     border-color: var(--text-light);
+}
+
+/* Fun grid variant: the original 4-column card masonry */
+.projects-grid--fun {
+    column-count: 4;
+    column-gap: 1.25rem;
+}
+
+.projects-grid--fun .project-item {
+    margin-bottom: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+    .projects-grid--fun {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid--fun {
+        column-count: 2;
+        column-gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid--fun {
+        column-count: 1;
+    }
+}
+
+/* Minimal grid variant: media + title only, no card chrome, square corners.
+   Remove the projects-grid--minimal class in index.html to restore cards. */
+.projects-grid--minimal .project-item {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.projects-grid--minimal .project-item:hover {
+    transform: none;
+    border-color: transparent;
+}
+
+.projects-grid--minimal .project-item::before {
+    display: none;
+}
+
+.projects-grid--minimal .project-image {
+    border-radius: 0;
+}
+
+.projects-grid--minimal .project-info {
+    padding: 0.75rem 0 0;
+}
+
+.projects-grid--minimal .project-title {
+    margin-bottom: 0;
+}
+
+.projects-grid--minimal .project-subtitle,
+.projects-grid--minimal .project-tags {
+    display: none;
 }
 
 /* About Page */
@@ -948,11 +1012,6 @@ img {
     }
 }
 
-@media (max-width: 1024px) {
-    .projects-grid {
-        column-count: 3;
-    }
-}
 
 @media (max-width: 1024px) {
     .character-ref-image.single {
@@ -1866,17 +1925,16 @@ img {
    Extra specificity + !important beat the mobile min-height overrides above. */
 .projects-grid .project-item .project-image.project-image--logo-strip {
     min-height: 0 !important;
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 16 / 9;
     background-color: #FAF0E6;
 }
 
 .project-image--logo-strip video {
     position: absolute;
-    width: 240%;
-    max-width: none;
-    height: auto;
-    left: 3%;
-    top: -51.6%;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 

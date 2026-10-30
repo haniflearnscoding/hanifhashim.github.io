@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun - Hanif Hashim</title>
+    <link rel="icon" type="image/png" href="favicon-frame-0.png">
+    <script src="favicon-animation.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .np-thumb {
+            position: absolute;
+            inset: 0;
+        }
+        .np-thumb img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: np-cycle 6s linear infinite;
+        }
+        .np-thumb img:nth-child(1) { animation-delay: 0s; }
+        .np-thumb img:nth-child(2) { animation-delay: 2s; }
+        .np-thumb img:nth-child(3) { animation-delay: 4s; }
+        @keyframes np-cycle {
+            0%    { opacity: 0; }
+            4%    { opacity: 1; }
+            62%   { opacity: 1; }
+            72%   { opacity: 0; }
+            100%  { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h1 class="site-name"><a href="index.html">Hanif Hashim</a></h1>
+                <p class="site-tagline">Interactive media artist and creative technologist.</p>
+                
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Work</a>
+                    <a href="fun.html" class="nav-link active">Fun</a>
+                    
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+            
+            <footer class="sidebar-footer">
+                <p>&copy; 2026 Abdul Hanif Hashim</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <div class="projects-grid projects-grid--fun">
+                <article class="project-item">
+                    <a href="livecoding.html" class="project-link">
+                        <div class="project-image project-image--dark">
+                            <canvas id="hydra-thumb" class="hydra-thumb"></canvas>
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Live Coding Performance</h2>
+                            <p class="project-subtitle">Audiovisual performance written and executed live in Strudel and Hydra</p>
+                            <div class="project-tags">
+                                <span class="tag">Live Coding</span>
+                                <span class="tag">Hydra</span>
+                                <span class="tag">Strudel</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="tactile-accessibility-maps.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/tactile-maps-hero.png" alt="Tactile Accessibility Maps">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Tactile Accessibility Maps</h2>
+                            <p class="project-subtitle">Print pipeline mapping accessible routes through Concordia SGW</p>
+                            <div class="project-tags">
+                                <span class="tag">Synthesis</span>
+                                <span class="tag">Print</span>
+                                <span class="tag">Cartography</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="clocking-out.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/ggj-2026/sprites/splashscreen.png" alt="Clocking Out" class="pixelated">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Clocking Out</h2>
+                            <p class="project-subtitle">GGJ 2026 entry built in 48 hours</p>
+                            <div class="project-tags">
+                                <span class="tag">Game Dev</span>
+                                <span class="tag">Game Jam</span>
+                                <span class="tag">48h</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="data-bodies.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/data-bodies-skeleton.gif" alt="Data Bodies installation">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Data Bodies</h2>
+                            <p class="project-subtitle">Interactive experiential installation with real-time motion tracking and generative content</p>
+                            <div class="project-tags">
+                                <span class="tag">Experiential</span>
+                                <span class="tag">Motion Tracking</span>
+                                <span class="tag">Interactive</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="miasma.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/Miasma.png" alt="Miasma">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Miasma</h2>
+                            <p class="project-subtitle">3D visualization exploring atmospheric contamination and transformation</p>
+                            <div class="project-tags">
+                                <span class="tag">3D Visualization</span>
+                                <span class="tag">Blender</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="venice-apartment.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/apart.gif" alt="Venice Apartment">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Venice Apartment</h2>
+                            <p class="project-subtitle">PS2 asset extraction and Unreal Engine recreation from Sly Cooper 3</p>
+                            <div class="project-tags">
+                                <span class="tag">Unreal Engine</span>
+                                <span class="tag">Technical Art</span>
+                                <span class="tag">3D</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="phasing-mario-block.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/phasing-mario-preview.gif" alt="Phasing Mario Block">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Phasing Mario Block</h2>
+                            <p class="project-subtitle">3D animation exploring phasing, rhythm, and repetition</p>
+                            <div class="project-tags">
+                                <span class="tag">3D Animation</span>
+                                <span class="tag">Blender</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="ai-magazine.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/Power1.png" alt="AI Magazine">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">AI Magazine</h2>
+                            <p class="project-subtitle">Visual essay on the politics of AI and corporate manipulation</p>
+                            <div class="project-tags">
+                                <span class="tag">Editorial Design</span>
+                                <span class="tag">Critical Theory</span>
+                                <span class="tag">Print</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="last-wing-standing.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/ezgif.com-video-to-gif-converter.gif" alt="The Last Wing Standing" class="zoom-2x">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">The Last Wing Standing</h2>
+                            <p class="project-subtitle">A co-op PICO-8 game about conquering an all-you-can-eat wing challenge</p>
+                            <div class="project-tags">
+                                <span class="tag">Game</span>
+                                <span class="tag">PICO-8</span>
+                                <span class="tag">Co-op</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- <article class="project-item">
+                    <a href="jmsb-graduation-booklet.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/jmsb-graduation-booklet.png" alt="JMSB Graduation Booklet">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">JMSB Graduation Booklet</h2>
+                            <p class="project-subtitle">Ceremony program for Kenneth Woods Portfolio Management Program</p>
+                            <div class="project-tags">
+                                <span class="tag">Print Design</span>
+                                <span class="tag">Editorial</span>
+                            </div>
+                        </div>
+                    </a>
+                </article> -->
+
+                <article class="project-item">
+                    <a href="dept-economics-banner.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/econ-banner-mockup.png" alt="Department of Economics Banner" class="zoom-1-5x">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Department of Economics Banner</h2>
+                            <p class="project-subtitle">Pull-up banner design for Concordia's Faculty of Arts and Science</p>
+                            <div class="project-tags">
+                                <span class="tag">Graphic Design</span>
+                                <span class="tag">Print</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="cinema-awards-booklet.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/pamphlet_mockup.png" alt="Cinema Awards Ceremony Booklet">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">Cinema Awards Ceremony Booklet</h2>
+                            <p class="project-subtitle">Event program design for Mel Hoppenheim School of Cinema</p>
+                            <div class="project-tags">
+                                <span class="tag">Print Design</span>
+                                <span class="tag">Editorial</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="3d-tree-blender.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/3d-tree-preview.gif" alt="3D Tree in Blender">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-title">3D Tree</h2>
+                            <p class="project-subtitle">Procedural 3D tree modeling and animation in Blender</p>
+                            <div class="project-tags">
+                                <span class="tag">3D</span>
+                                <span class="tag">Blender</span>
+                                <span class="tag">Animation</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script>
+        const thumbCanvas = document.getElementById('hydra-thumb');
+        thumbCanvas.width  = thumbCanvas.offsetWidth  || 640;
+        thumbCanvas.height = thumbCanvas.offsetHeight || 360;
+
+        new Hydra({ canvas: thumbCanvas, detectAudio: false, makeGlobal: true });
+
+        var spd = 0.4, kali = 1, px = 20, sat = 2, fb = 0.1, mod = 0.3;
+
+        osc(10, 0.2, 1.5)
+            .color(1.2, 1, 0.8)
+            .rotate(() => time * spd)
+            .modulate(
+                noise(3, 0.2).scale(() => 1 + (Math.sin(time * 0.7) * 0.5 + 0.5) * 3),
+                () => (Math.cos(time * 0.5) * 0.5 + 0.5) * mod
+            )
+            .kaleid(() => kali)
+            .pixelate(
+                () => px + (Math.sin(time * 0.7) * 0.5 + 0.5) * 40,
+                () => px + (Math.sin(time * 0.7) * 0.5 + 0.5) * 80
+            )
+            .posterize(6).contrast(1.8).saturate(() => 2 * Math.max(0, Math.sin(time * 0.3)))
+            .blend(src(o0), () => fb)
+            .out(o0);
+    </script>
+    <script>
+        // Mouse-reactive gradient tracking for project items
+        document.querySelectorAll('.project-item').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                item.style.setProperty('--mouse-x', `${x}px`);
+                item.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
