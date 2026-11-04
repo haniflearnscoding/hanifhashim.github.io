@@ -45,9 +45,8 @@
     --radius-md: 4px;
     --radius-lg: 8px;
 
-    /* Project card hover theme */
-    --hover-color: var(--brand-orange);
-    --hover-tint-strength: 15%;
+    /* Project card hover: opacity of the white wash over the media */
+    --hover-overlay: 0.25;
 }
 
 * {
@@ -212,46 +211,24 @@ img {
     width: 100%;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
     position: relative;
-    --mouse-x: 50%;
-    --mouse-y: 50%;
 }
 
-.project-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Mouse-reactive gradient overlay */
-.project-item::before {
+/* Card hover: a flat white wash over the media, no movement or zoom.
+   Strength is set by --hover-overlay in :root. */
+.project-image::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: var(--radius-lg);
+    inset: 0;
+    background: #fff;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
     z-index: 1;
 }
 
-.project-item:hover::before {
-    opacity: 1;
-}
-
-/* Card hover theme: one color for every card.
-   Retheme by changing --hover-color in :root. Optional per-card or per-section
-   overrides: --hover-tint (glow color, defaults to --hover-color) and
-   --hover-tint-strength. Options are documented in the Figma Components page. */
-.project-item::before {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            color-mix(in srgb, var(--hover-tint, var(--hover-color)) var(--hover-tint-strength), transparent),
-            transparent 40%);
-}
-
-.project-item:hover {
-    border-color: var(--hover-color);
+.project-item:hover .project-image::after,
+.project-link:focus-visible .project-image::after {
+    opacity: var(--hover-overlay);
 }
 
 .project-item:nth-child(1) {
@@ -363,10 +340,6 @@ img {
     min-height: 290px;
 }
 
-.project-item:hover .project-image img {
-    transform: scale(calc(var(--zoom, 1) * 1.05));
-}
-
 
 .project-info {
     padding: 1rem;
@@ -446,15 +419,6 @@ img {
     border: none;
     border-radius: 0;
     box-shadow: none;
-}
-
-.projects-grid--minimal .project-item:hover {
-    transform: none;
-    border-color: transparent;
-}
-
-.projects-grid--minimal .project-item::before {
-    display: none;
 }
 
 .projects-grid--minimal .project-image {
